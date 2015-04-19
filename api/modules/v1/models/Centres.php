@@ -30,7 +30,7 @@ class Centres extends ActiveRecord {
 				],
 				[ 
 						[ 
-								'adresa',
+								'direccio',
 								'telefon',
 								'poblacio' 
 						],
