@@ -4,29 +4,37 @@ use yii\bootstrap\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \common\models\LoginForm */
+/* @var $model app\models\LoginForm */
 
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+       
+    <div class="login-panel panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Benvingut a Edunet.cat</h3>
+        </div>
+        <div class="panel-body">
+            <?php $form = ActiveForm::begin([
+                    'id' => 'login-form',
+                ]); ?>
+                
+                <fieldset>
+                    <div class="form-group">
+                        <input id="loginform-username" class="form-control" name="LoginForm[username]" placeholder="E-mail"  autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input id="loginform-password" class="form-control" name="LoginForm[password]" placeholder="Password" name="password" type="password" value="">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="loginform-rememberme" name="LoginForm[rememberMe]" value="1" checked="">Recordar-me
+                        </label>
+                    </div>
+                    <?= Html::submitButton('Login', ['class' => 'btn btn-lg btn-success btn-block', 'name' => 'login-button']) ?>
+                </fieldset>
 
-    <p>Please fill out the following fields to login:</p>
-
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-                <?= $form->field($model, 'username') ?>
-                <?= $form->field($model, 'password')->passwordInput() ?>
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
-                <div style="color:#999;margin:1em 0">
-                    If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
-                </div>
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
-            <?php ActiveForm::end(); ?>
+            <?php ActiveForm::end(); ?>            
         </div>
     </div>
-</div>
+        

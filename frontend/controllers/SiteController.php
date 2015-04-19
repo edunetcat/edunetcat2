@@ -18,6 +18,9 @@ use yii\filters\AccessControl;
  */
 class SiteController extends Controller
 {
+
+    public $layout = 'login';
+
     /**
      * @inheritdoc
      */
@@ -67,18 +70,39 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        //si no està logat
+        if (Yii::$app->user->isGuest) {
+            return $this->actionLogin();
+        } else {
+            //carrega layout 'main'
+            $this->layout = 'main';
+            
+            //afegeix al layout la vista
+            return $this->render('index');    
+        }
     }
 
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
+            die("logged");
             return $this->goHome();
         }
 
         $model = new LoginForm();
+
+        /*
+        echo '<pre>';
+        print_r( Yii::$app->request->post() );
+        echo '</pre>';
+            
+        echo '<pre>';
+        print_r( $model );
+        echo '</pre>';*/
+
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            die("logged");
+            return $this->goHome();
         } else {
             return $this->render('login', [
                 'model' => $model,
@@ -93,6 +117,7 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    /*
     public function actionContact()
     {
         $model = new ContactForm();
@@ -130,7 +155,7 @@ class SiteController extends Controller
         return $this->render('signup', [
             'model' => $model,
         ]);
-    }
+    }*/
 
     public function actionRequestPasswordReset()
     {
