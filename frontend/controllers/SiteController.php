@@ -14,6 +14,12 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
 /**
+*   Controller que controla l'accès al panell de control i el login d'usuaris
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+
+/**
  * Site controller
  */
 class SiteController extends Controller
@@ -68,8 +74,14 @@ class SiteController extends Controller
         ];
     }
 
+    /**
+    *   actionIndex es la que sexecuta quan s'accedeix a la url. Verifica si l'usuari 
+    *   està identificat. Si està autenticat, redirecciona 
+    *   
+    *   @author: Biel <bielbcm@gmail.com>
+    **/
     public function actionIndex()
-    {
+    {   
         $session = Yii::$app->session;
 
         //si està logat
@@ -84,6 +96,12 @@ class SiteController extends Controller
         }
     }
 
+    /**
+    *   Verifica si l'usuari està loguejat, si s'ha realitzat un intent de login (POST), i 
+    *   en cas afirmatiu, redirecciona. 
+    *   
+    *   @author: Biel <bielbcm@gmail.com>
+    **/
     public function actionLogin()
     {   
         $session = Yii::$app->session;
@@ -99,9 +117,11 @@ class SiteController extends Controller
             $username = Yii::$app->request->post()['LoginForm']['username'];
             $password = Yii::$app->request->post()['LoginForm']['password'];
             $url = 'http://dev.api.edunet.cat/v1/login/';
-            $response = json_decode( file_get_contents($url.$username.'/'.$password) );
-        }
 
+            if(isset( $username ) && isset( $password )) {             
+                $response = json_decode( $this->get_remote_data($url.$username.'/'.$password)[0] );
+            }
+        }
         //si s'ha logat correctament
         if ($response != 'error') {
             $session->set('isLogged', true);
@@ -115,15 +135,37 @@ class SiteController extends Controller
         }
     }
 
-    public function actionLogout()
-    {
-        $session = Yii::$app->session;
 
-        //elimina sessió
-        $session->set('isLogged', false);
-        $session->set('authKey', '');
-
-        return $this->goHome();
+    /**
+    *   Mètode per realitzar peticions rest. Retorna un array:
+    *   [0] - Resposta en format JSON
+    *   [1] - Header de la resposta
+    *   
+    *   @author: Marcos
+    **/
+    public static function get_remote_data($url) {
+        // metodo 3
+        $agent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705; .NET CLR 1.1.4322)';
+         
+        $ch = curl_init ();
+        curl_setopt ( $ch, CURLOPT_SSL_VERIFYPEER, false );
+        curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, true );
+        curl_setopt ( $ch, CURLOPT_URL, $url );
+        curl_setopt ( $ch, CURLOPT_USERAGENT, $agent );
+        curl_setopt ( $ch, CURLOPT_VERBOSE, 1 );
+        curl_setopt ( $ch, CURLOPT_HEADER, 1 );
+         
+        $result = curl_exec ( $ch );
+         
+        $header_size = curl_getinfo ( $ch, CURLINFO_HEADER_SIZE );
+        $header = substr ( $result, 0, $header_size );
+        $body = substr ( $result, $header_size );
+         
+        curl_close ( $ch );
+        return [ 
+            $body,
+            $header 
+        ];
     }
 
     /*public function actionRequestPasswordReset()
