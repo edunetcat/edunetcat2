@@ -333,17 +333,17 @@ LOCK TABLES `persona` WRITE;
 
 
 INSERT INTO `persona` (`id`, `email`, `NIF`, `nom`, `cognoms`, `dataNaixement`, `direccio`, `població`, `codiPostal`, `password`, `idTipusUsuari`, `idCEntre`, `nivell`, `authKey`) VALUES
-(1, 'mail1@gmail.com', '11111111A', 'Manuel', 'Acognom Acognom', '0000-00-00', 'Carrer A 1', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, ''),
-(2, 'mail2@gmail.com', '22222222B', 'Marcos', 'Bcognom Bcognom', '0000-00-00', 'Carrer B 2', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, ''),
-(3, 'mail3@gmail.com', '33333333C', 'Biel', 'Ccognom Ccognom', '0000-00-00', 'Carrer C 3', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, ''),
-(4, 'mail4@gmail.com', '44444444D', 'Tomàs', 'Dcognom Dcognom', '0000-00-00', 'Carrer D 4', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, ''),
-(5, 'mail5@gmail.com', '55555555E', 'Emili', 'Ecognom Ecognom', '0000-00-00', 'Carrer E 5', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 2, 1, 3, ''),
-(6, 'mail6@gmail.com', '66666666F', 'Francesc', 'Fcognom Fcognom', '0000-00-00', 'Carrer F 6', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 2, 1, 3, ''),
-(7, 'mail7@gmail.com', '77777777G', 'Guillem', 'Gcognom Gcognom', '0000-00-00', 'Carrer G 7', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 2, 1, 3, ''),
-(8, 'mail8@gmail.com', '88888888H', 'Hugo', 'Hcognom Hcognom', '0000-00-00', 'Carrer H 8', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 3, 1, 6, ''),
-(9, 'mail9@gmail.com', '99999999I', 'Isaac', 'Icognom Icognom', '0000-00-00', 'Carrer I 9', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 3, 1, 6, ''),
-(10, 'mail10@gmail.com', '10000000J', 'Joan', 'Jcognom Jcognom', '0000-00-00', 'Carrer J 10', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 3, 1, 6, ''),
-(11, 'mail11@gmail.com', '11000000J', 'Kilian', 'Kcognom Kcognom', '0000-00-00', 'Carrer K 11', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 4, 1, 9, '');
+(1, 'mail1@gmail.com', '11111111A', 'Manuel', 'Acognom Acognom', '0000-00-00', 'Carrer A 1', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, 'GJQUMM3KA24UX5SA6Y4NMNXVXRR4G8CN'),
+(2, 'mail2@gmail.com', '22222222B', 'Marcos', 'Bcognom Bcognom', '0000-00-00', 'Carrer B 2', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, 'TNBFC2A4SAFB6ZUB9MLVCFY59VVD44GM'),
+(3, 'mail3@gmail.com', '33333333C', 'Biel', 'Ccognom Ccognom', '0000-00-00', 'Carrer C 3', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, '97RKQLL3GDE3WTFLC2FZ9NA4N9SMA4B9'),
+(4, 'mail4@gmail.com', '44444444D', 'Tomàs', 'Dcognom Dcognom', '0000-00-00', 'Carrer D 4', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, 'QJ3XC5AQDPVSZ3FJVLY6334MRSP65G5K'),
+(5, 'mail5@gmail.com', '55555555E', 'Emili', 'Ecognom Ecognom', '0000-00-00', 'Carrer E 5', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 2, 1, 3, 'NWJJJ83GQ8ELJXWHJLYSK6CSCRCCVG39'),
+(6, 'mail6@gmail.com', '66666666F', 'Francesc', 'Fcognom Fcognom', '0000-00-00', 'Carrer F 6', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 2, 1, 3, 'RDYUV2WVR8JCFM4P8MQFF2TZ4SHUWCDD'),
+(7, 'mail7@gmail.com', '77777777G', 'Guillem', 'Gcognom Gcognom', '0000-00-00', 'Carrer G 7', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 2, 1, 3, 'HN8NDQS7RGGJYDQRDQLFZASYHJC6K6YS'),
+(8, 'mail8@gmail.com', '88888888H', 'Hugo', 'Hcognom Hcognom', '0000-00-00', 'Carrer H 8', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 3, 1, 6, 'G82AA7AM8KXFZNDGSGUULZ9KW77GNQ7V'),
+(9, 'mail9@gmail.com', '99999999I', 'Isaac', 'Icognom Icognom', '0000-00-00', 'Carrer I 9', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 3, 1, 6, 'VUWTMU6LJ6MHM36W3Z9N5EFSTS8LLLH8'),
+(10, 'mail10@gmail.com', '10000000J', 'Joan', 'Jcognom Jcognom', '0000-00-00', 'Carrer J 10', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 3, 1, 6, 'F2QWAD5KNWYKUCLQZCTCRZ2QTC5GRBAX'),
+(11, 'mail11@gmail.com', '11000000J', 'Kilian', 'Kcognom Kcognom', '0000-00-00', 'Carrer K 11', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 4, 1, 9, '96WJMFLMBKCZ9LRH3V26VF4AHY3S5ZA4');
 
 /*!40000 ALTER TABLE `persona` ENABLE KEYS */;
 UNLOCK TABLES;
