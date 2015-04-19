@@ -23,13 +23,17 @@ panellApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider
         .when('/panell', {
-            templateUrl: 'views/panell.html',
-            controller: 'panellCtrl'
+            templateUrl: 'ng-views/panell.html',
+            controller: 'PanellCtrl'
         })
         .when('/centres', {
-            templateUrl: 'views/centres.html',
+            templateUrl: 'ng-views/centres.html',
             controller: 'CentresListCtrl'
         })
+        .when('/logout', {
+            templateUrl: 'ng-views/panell.html',
+            controller: 'LogoutCtrl'
+        })        
         .otherwise({
             redirectTo: '/panell'
         });

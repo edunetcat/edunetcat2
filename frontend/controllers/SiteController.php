@@ -70,38 +70,43 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        //si no està logat
-        if (Yii::$app->user->isGuest) {
-            return $this->actionLogin();
-        } else {
+        $session = Yii::$app->session;
+
+        //si està logat
+        if ( isset($session['isLogged']) && $session['isLogged'] == true ) {
             //carrega layout 'main'
             $this->layout = 'main';
             
             //afegeix al layout la vista
             return $this->render('index');    
+        } else {
+            return $this->actionLogin();
         }
     }
 
     public function actionLogin()
-    {
-        if (!\Yii::$app->user->isGuest) {
-            die("logged");
+    {   
+        $session = Yii::$app->session;
+        $model = new LoginForm();
+        $response = 'error';
+
+        if ( $session['isLogged'] ) {
             return $this->goHome();
         }
 
-        $model = new LoginForm();
+        //verifica petició post per fer login
+        if(Yii::$app->request->post()) {
+            $username = Yii::$app->request->post()['LoginForm']['username'];
+            $password = Yii::$app->request->post()['LoginForm']['password'];
+            $url = 'http://dev.api.edunet.cat/v1/login/';
+            $response = json_decode( file_get_contents($url.$username.'/'.$password) );
+        }
 
-        /*
-        echo '<pre>';
-        print_r( Yii::$app->request->post() );
-        echo '</pre>';
-            
-        echo '<pre>';
-        print_r( $model );
-        echo '</pre>';*/
+        //si s'ha logat correctament
+        if ($response != 'error') {
+            $session->set('isLogged', true);
+            $session->set('authKey', $response);
 
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            die("logged");
             return $this->goHome();
         } else {
             return $this->render('login', [
@@ -112,52 +117,16 @@ class SiteController extends Controller
 
     public function actionLogout()
     {
-        Yii::$app->user->logout();
+        $session = Yii::$app->session;
+
+        //elimina sessió
+        $session->set('isLogged', false);
+        $session->set('authKey', '');
 
         return $this->goHome();
     }
 
-    /*
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending email.');
-            }
-
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
-    public function actionSignup()
-    {
-        $model = new SignupForm();
-        if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
-                }
-            }
-        }
-
-        return $this->render('signup', [
-            'model' => $model,
-        ]);
-    }*/
-
-    public function actionRequestPasswordReset()
+    /*public function actionRequestPasswordReset()
     {
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -192,5 +161,5 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
-    }
+    }*/
 }

@@ -54,7 +54,7 @@ AppAsset::register($this);
 
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <a>AuthKey: <?php //echo Yii::$app->user->identity->getAuthKey() ?></a>
+                    <a>AuthKey: <?php $session = Yii::$app->session; echo $session['authKey'] ?></a>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
@@ -107,7 +107,7 @@ AppAsset::register($this);
                         <li><a href=""><i class="fa fa-gear fa-fw"></i> Compte</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="index.php?r=site/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->

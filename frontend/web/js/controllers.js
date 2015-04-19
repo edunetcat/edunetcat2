@@ -16,9 +16,22 @@ var panellAppControllers = angular.module('panellAppControllers', []);
 *   
 *   @author: Biel <bielbcm@gmail.com>
 **/
-panellAppControllers.controller('panellCtrl', ['$scope',
+panellAppControllers.controller('PanellCtrl', ['$scope',
 	function($scope) {
 
+	}]);
+
+
+/**
+*   Controller que gestiona la plana /panell 
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('LogoutCtrl', ['$scope', '$location',
+	function($scope, $location) {
+		console.log("redirect");
+		//$location.path("http://dev.edunet.cat/logout.php");
+		window.location = 'http://dev.edunet.cat/logout.php';
 	}]);
 
 
