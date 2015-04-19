@@ -304,10 +304,7 @@ UNLOCK TABLES;
 -- Table structure for table `persona`
 --
 
-DROP TABLE IF EXISTS `persona`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `persona` (
+CREATE TABLE IF NOT EXISTS `persona` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
   `NIF` varchar(10) DEFAULT NULL,
@@ -317,26 +314,37 @@ CREATE TABLE `persona` (
   `direccio` varchar(255) DEFAULT NULL,
   `població` varchar(255) DEFAULT NULL,
   `codiPostal` varchar(5) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
+  `password` varchar(64) DEFAULT NULL,
   `idTipusUsuari` int(11) NOT NULL,
   `idCEntre` int(11) DEFAULT NULL,
   `nivell` int(11) DEFAULT NULL,
   `authKey` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `TipusUsuari_idx` (`idTipusUsuari`),
-  KEY `centre_idx` (`idCEntre`),
-  CONSTRAINT `TipusUsuari` FOREIGN KEY (`idTipusUsuari`) REFERENCES `tipususuari` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `centre` FOREIGN KEY (`idCEntre`) REFERENCES `centres` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  KEY `centre_idx` (`idCEntre`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
--- Dumping data for table `persona`
+-- Volcado de datos para la tabla `persona`
 --
-
 LOCK TABLES `persona` WRITE;
+
 /*!40000 ALTER TABLE `persona` DISABLE KEYS */;
-INSERT INTO `persona` VALUES (1,'mail1@gmail.com','111111111A','Albert','Acognom Acognom','0000-00-00','Carrer A 1','Barna','08111','aaa',1,1,1,''),(2,'mail2@gmail.com','222222222B','Bernat','Bcognom Bcognom','0000-00-00','Carrer B 2','Barna','08111','bbb',1,1,1,''),(3,'mail3@gmail.com','333333333C','Carles','Ccognom Ccognom','0000-00-00','Carrer C 3','Barna','08111','ccc',1,1,1,''),(4,'mail4@gmail.com','444444444D','Daniel','Dcognom Dcognom','0000-00-00','Carrer D 4','Barna','08111','ddd',1,1,1,''),(5,'mail5@gmail.com','555555555E','Emili','Ecognom Ecognom','0000-00-00','Carrer E 5','Barna','08111','eee',2,1,3,''),(6,'mail6@gmail.com','666666666F','Francesc','Fcognom Fcognom','0000-00-00','Carrer F 6','Barna','08111','fff',2,1,3,''),(7,'mail7@gmail.com','777777777G','Guillem','Gcognom Gcognom','0000-00-00','Carrer G 7','Barna','08111','ggg',2,1,3,''),(8,'mail8@gmail.com','888888888H','Hugo','Hcognom Hcognom','0000-00-00','Carrer H 8','Barna','08111','hhh',3,1,6,''),(9,'mail9@gmail.com','999999999I','Isaac','Icognom Icognom','0000-00-00','Carrer I 9','Barna','08111','iii',3,1,6,''),(10,'mail10@gmail.com','100000000J','Joan','Jcognom Jcognom','0000-00-00','Carrer J 10','Barna','08111','jjj',3,1,6,''),(11,'mail11@gmail.com','110000000J','Kilian','Kcognom Kcognom','0000-00-00','Carrer K 11','Barna','08111','kkk',4,1,9,'');
+
+
+INSERT INTO `persona` (`id`, `email`, `NIF`, `nom`, `cognoms`, `dataNaixement`, `direccio`, `població`, `codiPostal`, `password`, `idTipusUsuari`, `idCEntre`, `nivell`, `authKey`) VALUES
+(1, 'mail1@gmail.com', '11111111A', 'Manuel', 'Acognom Acognom', '0000-00-00', 'Carrer A 1', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, ''),
+(2, 'mail2@gmail.com', '22222222B', 'Marcos', 'Bcognom Bcognom', '0000-00-00', 'Carrer B 2', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, ''),
+(3, 'mail3@gmail.com', '33333333C', 'Biel', 'Ccognom Ccognom', '0000-00-00', 'Carrer C 3', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, ''),
+(4, 'mail4@gmail.com', '44444444D', 'Tomàs', 'Dcognom Dcognom', '0000-00-00', 'Carrer D 4', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 1, 1, 1, ''),
+(5, 'mail5@gmail.com', '55555555E', 'Emili', 'Ecognom Ecognom', '0000-00-00', 'Carrer E 5', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 2, 1, 3, ''),
+(6, 'mail6@gmail.com', '66666666F', 'Francesc', 'Fcognom Fcognom', '0000-00-00', 'Carrer F 6', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 2, 1, 3, ''),
+(7, 'mail7@gmail.com', '77777777G', 'Guillem', 'Gcognom Gcognom', '0000-00-00', 'Carrer G 7', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 2, 1, 3, ''),
+(8, 'mail8@gmail.com', '88888888H', 'Hugo', 'Hcognom Hcognom', '0000-00-00', 'Carrer H 8', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 3, 1, 6, ''),
+(9, 'mail9@gmail.com', '99999999I', 'Isaac', 'Icognom Icognom', '0000-00-00', 'Carrer I 9', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 3, 1, 6, ''),
+(10, 'mail10@gmail.com', '10000000J', 'Joan', 'Jcognom Jcognom', '0000-00-00', 'Carrer J 10', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 3, 1, 6, ''),
+(11, 'mail11@gmail.com', '11000000J', 'Kilian', 'Kcognom Kcognom', '0000-00-00', 'Carrer K 11', 'Barna', '08111', 'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79', 4, 1, 9, '');
+
 /*!40000 ALTER TABLE `persona` ENABLE KEYS */;
 UNLOCK TABLES;
 
