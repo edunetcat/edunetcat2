@@ -1,5 +1,19 @@
 'user strict';
 
+var _AUTHKEY;
+
+$.ajax({
+	url: '/index.php?r=site/token',
+	type: 'GET',
+	success: function(data) {
+		_AUTHKEY = data;
+	},
+	error: function(e) {
+		//en cas d'error no fer res
+	}
+});
+
+
 /**
 *   Per facilitar el desenvolupament, s'han definit tots els controllers de la 
 *	SPA (Single page aplication) en un mateix fitxer. 
@@ -31,7 +45,7 @@ panellAppControllers.controller('LogoutCtrl', ['$scope', '$location',
 	function($scope, $location) {
 		console.log("redirect");
 		//$location.path("http://dev.edunet.cat/logout.php");
-		window.location = 'http://dev.edunet.cat/logout.php';
+		window.location = '/index.php?r=site/logout';
 	}]);
 
 
@@ -51,5 +65,29 @@ panellAppControllers.controller('CentresListCtrl', ['$scope', '$http',
 
 		// propietat utilitzada per definir l'ordre de visualització
 		$scope.orderProp = 'name';
+
+	}]);
+
+
+
+/**
+*   Controller que gestiona la plana /centres 
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('CentresAddCtrl', ['$scope', '$http', 
+	function($scope, $http) {
+		
+	}]);
+
+
+
+/**
+*   Controller que gestiona la plana /centres 
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('CentresEditCtrl', ['$scope', '$http', '$routeParams', '$location',
+	function($scope, $http, $routeParams, $location) {
 
 	}]);

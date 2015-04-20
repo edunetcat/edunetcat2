@@ -31,12 +31,15 @@
 					            <thead>
 					                <tr>
 					                    <th ng-click="orderProp = 'name'">Centre</th>
+					                    <th ng-click="orderProp = 'adreca'">Adreça</th>
 					                    <th ng-click="orderProp = 'adreca'">Adreça</th>                            
 					                </tr>
 					            </thead>
 					            <tr ng-repeat="centre in centres | orderBy:orderProp">
 					                <td>{{centre.name}}</td>
 					                <td>{{centre.adreca}}</td>
+					                <td><a href="#/centres-edit/:id" class="btn btn-default btn-xs"><i class="fa fa-pencil fa-fw"></i> Editar</button></td>
+
 					            </tr>
 					        </table>
 
@@ -64,10 +67,7 @@
 	            <!-- /.panel-heading -->
 	            <div class="panel-body">
 	                
-	                <a href="#" class="btn btn-default btn-block">Veure totes les alertes</a>
-	                <a href="#" class="btn btn-default btn-block">Veure totes les alertes</a>
-	                <a href="#" class="btn btn-default btn-block">Veure totes les alertes</a>
-	                <a href="#" class="btn btn-default btn-block">Veure totes les alertes</a>
+	                <a href="#/centres-add" class="btn btn-default btn-block">Afegir centre nou</a>
 
 	                
 	                <!-- /.list-group -->
