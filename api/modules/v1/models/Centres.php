@@ -22,20 +22,20 @@ class Centres extends ActiveRecord {
 	 */
 	public function rules() {
 		return [ 
+			[ 
 				[ 
-						[ 
-								'nom' 
-						],
-						'required' 
+					'nom' 
 				],
+				'required' 
+			],
+			[ 
 				[ 
-						[ 
-								'direccio',
-								'telefon',
-								'poblacio' 
-						],
-						'default' 
-				] 
+					'direccio',
+					'telefon',
+					'poblacio' 
+				],
+				'default' 
+			] 
 		];
 	}
 }

@@ -26,10 +26,20 @@ panellApp.config(['$routeProvider',
             templateUrl: 'ng-views/panell.html',
             controller: 'PanellCtrl'
         })
+
         .when('/centres', {
             templateUrl: 'ng-views/centres.html',
             controller: 'CentresListCtrl'
         })
+        .when('/centres-add', {
+            templateUrl: 'ng-views/centres-add.html',
+            controller: 'CentresAddCtrl'
+        })
+        .when('/centres-edit/:id', {
+            templateUrl: 'ng-views/centres-add.html',
+            controller: 'CentresEditCtrl'
+        })
+
         .when('/logout', {
             templateUrl: 'ng-views/panell.html',
             controller: 'LogoutCtrl'

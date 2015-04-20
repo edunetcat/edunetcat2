@@ -35,7 +35,7 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
+                'only' => ['logout', 'signup', 'token'],
                 'rules' => [
                     [
                         'actions' => ['signup'],
@@ -46,6 +46,11 @@ class SiteController extends Controller
                         'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
+                    ],
+                    [
+                        'actions' => ['token'],
+                        'allow' => true,
+                        'roles' => ['?'],
                     ],
                 ],
             ],
@@ -135,6 +140,44 @@ class SiteController extends Controller
         }
     }
 
+    /**
+    *   Mètode que retorna l'authKey guardada en sessió, per a ser utilitzada
+    *   des de la capa javascript per a realitzar peticions a l'API. 
+    *   Mitjançant petició $AJAX a: /index.php?r=site/token
+    *   
+    *   @author: Biel <bielbcm@gmail.com>
+    **/
+    public function actionToken() 
+    {
+        $session = Yii::$app->session;
+        if ( isset($session['isLogged']) && isset($session['authKey']) ) {
+            echo $session['authKey'];
+        } else {
+            return $this->render('login', [
+                'model' => $model,
+            ]);
+        }
+
+    }
+
+
+    /**
+    *   Mètode per fer logout
+    *   
+    *   @author: Biel <bielbcm@gmail.com>
+    **/
+    public function actionLogout() 
+    {
+        $session = Yii::$app->session;
+        if ( isset($session['isLogged']) && isset($session['authKey']) ) {
+            unset($_SESSION['isLogged']);
+            unset($_SESSION['authKey']);
+        }
+
+        return $this->render('login', [
+            'model' => $model,
+        ]);
+    }
 
     /**
     *   Mètode per realitzar peticions rest. Retorna un array:
