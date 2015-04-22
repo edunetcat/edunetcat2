@@ -1,0 +1,731 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.2.0",
+        "title": "edunet.cat API"
+    },
+    "host": "dev.api.edunet.cat",
+    "basePath": "/v1",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "text/json",
+        "text/xml"
+    ],
+    "produces": [
+        "application/json",
+        "text/html"
+    ],
+    "paths": {
+        "/centres": {
+            "get": {
+                "summary": "Retorna un llistat complet dels centres.",
+                "responses": {
+                    "200": {
+                        "description": "El llistat s'ha retornat correctament",
+                        "schema": {
+                            "$ref": "#/definitions/centre"
+                        }
+                    }
+                },
+                "tags": [
+                    "centres"
+                ]
+            },
+            "post": {
+                "summary": "Crea un nou centre",
+                "parameters": [
+                    {
+                        "name": "nom",
+                        "in": "body",
+                        "description": "nom del centre",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/nouCentre"
+                        }
+                    }
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "El centre s'ha creat correctament"
+                    }
+                },
+                "tags": [
+                    "centres"
+                ]
+            },
+            "put": {
+                "tags": [
+                    "centres"
+                ],
+                "summary": "Actualitza el centre",
+                "description": "Actualitza el centre amb la id enviada",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "centre",
+                        "description": "centre",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/centre"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Id no vàlid"
+                    },
+                    "404": {
+                        "description": "No trobat"
+                    }
+                }
+            }
+        },
+        "/centres/{id}": {
+            "get": {
+                "summary": "Retorna el centre seleccionat.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del centre",
+                        "required": true,
+                        "type": "number",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "$ref": "#/definitions/centre"
+                        },
+                        "description": "El centre s'ha retornat correctament"
+                    }
+                },
+                "tags": [
+                    "centres"
+                ]
+            },
+            "delete": {
+                "description": "Elimina el centre amb identificador  id",
+                "summary": "Elimina el centre amb identificador  id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del centre a eliminar",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "centre eliminat"
+                    }
+                },
+                "tags": [
+                    "centres"
+                ]
+            }
+        },
+        "/missatges": {
+            "get": {
+                "summary": "Retorna un llistat complet dels missatges disponibles per a l’usuari que realitza la petició.",
+                "responses": {
+                    "200": {
+                        "description": "El llistat s'ha retornat correctament"
+                    }
+                },
+                "tags": [
+                    "missatges"
+                ]
+            },
+            "post": {
+                "summary": "Crea un nou missatge",
+                "parameters": [
+                    {
+                        "name": "missatge",
+                        "in": "body",
+                        "description": "Missatge a afegir",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/nouMissatge"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "El missatge s'ha creat correctament"
+                    }
+                },
+                "tags": [
+                    "missatges"
+                ]
+            }
+        },
+        "/missatges/{id}": {
+            "get": {
+                "summary": "Retorna un missatge en concret amb identificador id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del missatge",
+                        "required": true,
+                        "type": "number",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "El missatge s'ha retornat correctament"
+                    }
+                },
+                "tags": [
+                    "missatges"
+                ]
+            },
+            "delete": {
+                "description": "Elimina el missatge  amb identificador  id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del missatge a eliminar",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "missatge eliminat"
+                    }
+                },
+                "tags": [
+                    "missatges"
+                ]
+            }
+        },
+        "/cursos": {
+            "get": {
+                "summary": "Retorna un llistat complet dels cursos disponibles",
+                "responses": {
+                    "200": {
+                        "description": "El llistat s'ha retornat correctament"
+                    }
+                },
+                "tags": [
+                    "cursos"
+                ]
+            },
+            "post": {
+                "summary": "Crea un nou curs",
+                "parameters": [
+                    {
+                        "name": "curs",
+                        "in": "body",
+                        "description": "Curs a afegir",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/nouCurs"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "El curs s'ha creat correctament"
+                    }
+                },
+                "tags": [
+                    "cursos"
+                ]
+            },
+            "put": {
+                "tags": [
+                    "cursos"
+                ],
+                "summary": "Actualitza el curs",
+                "description": "Actualitza el curs amb la id enviada",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "curs",
+                        "description": "curs",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/curs"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Id no vàlid"
+                    },
+                    "404": {
+                        "description": "No trobat"
+                    }
+                }
+            }
+        },
+        "/cursos/{id}": {
+            "get": {
+                "summary": "Retorna un curs en concret amb identificador id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del curs",
+                        "required": true,
+                        "type": "number",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "El curs s'ha retornat correctament"
+                    }
+                },
+                "tags": [
+                    "cursos"
+                ]
+            },
+            "delete": {
+                "description": "Elimina el curs  amb identificador  id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del curs a eliminar",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "curs eliminat"
+                    }
+                },
+                "tags": [
+                    "cursos"
+                ]
+            }
+        },
+        "/assignatures": {
+            "get": {
+                "summary": "Retorna un llistat complet de les assignatures.",
+                "responses": {
+                    "200": {
+                        "description": "Retorna un llistat complet de les assignatures.",
+                        "schema": {
+                            "$ref": "#/definitions/assignatura"
+                        }
+                    }
+                },
+                "tags": [
+                    "assignatures"
+                ]
+            },
+            "post": {
+                "summary": "Crea una nova assignatura",
+                "parameters": [
+                    {
+                        "name": "assignatura",
+                        "in": "body",
+                        "description": "assignatura a afegir",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/novaAssignatura"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "L'assignatura s'ha creat correctament"
+                    }
+                },
+                "tags": [
+                    "assignatures"
+                ]
+            },
+            "put": {
+                "tags": [
+                    "assignatures"
+                ],
+                "summary": "Actualitza la assignatura",
+                "description": "Actualitza la assignatura amb la id enviada",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "assignatura",
+                        "description": "assignatura",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/assignatura"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Id no vàlid"
+                    },
+                    "404": {
+                        "description": "No trobat"
+                    }
+                }
+            }
+        },
+        "/assignatures/{id}": {
+            "get": {
+                "summary": "Retorna la assignatura seleccionada.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id de l¡assignatura",
+                        "required": true,
+                        "type": "number",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "La assignatura s'ha retornat correctament"
+                    }
+                },
+                "tags": [
+                    "assignatures"
+                ]
+            },
+            "delete": {
+                "description": "Elimina l'assignatura  amb identificador  id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del assignatura a eliminar",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "assignatura eliminada"
+                    }
+                },
+                "tags": [
+                    "assignatures"
+                ]
+            }
+        },
+        "/persona": {
+            "get": {
+                "summary": "Retorna un llistat complet dels usuaris",
+                "responses": {
+                    "200": {
+                        "description": "El llistat s'ha retornat correctament"
+                    }
+                },
+                "tags": [
+                    "persones"
+                ]
+            },
+            "post": {
+                "summary": "Crea un nou usuari",
+                "parameters": [
+                    {
+                        "name": "usuari",
+                        "in": "body",
+                        "description": "usuari a afegir",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/nouUsuari"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "El usuari s'ha creat correctament"
+                    }
+                },
+                "tags": [
+                    "persones"
+                ]
+            },
+            "put": {
+                "tags": [
+                    "persones"
+                ],
+                "summary": "Actualitza usuari",
+                "description": "Actualitza usuari amb la id enviada",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "usuari",
+                        "description": "usuari",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/usuari"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Id no vàlid"
+                    },
+                    "404": {
+                        "description": "No trobat"
+                    }
+                }
+            }
+        },
+        "/persona/{id}": {
+            "get": {
+                "summary": "Retorna un usuari en concret amb identificador id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del usuari",
+                        "required": true,
+                        "type": "number",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "El usuari s'ha retornat correctament"
+                    }
+                },
+                "tags": [
+                    "persones"
+                ]
+            },
+            "delete": {
+                "description": "Elimina l'usuari  amb identificador  id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de l'usuari a eliminar",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "usuari eliminat"
+                    }
+                },
+                "tags": [
+                    "persones"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "nouCentre": {
+            "required": [
+                "nom",
+                "direccio",
+                "telefon",
+                "poblacio"
+            ],
+            "properties": {
+                "nom": {
+                    "type": "string"
+                },
+                "direccio": {
+                    "type": "string"
+                },
+                "telefon": {
+                    "type": "string"
+                },
+                "poblacio": {
+                    "type": "string"
+                }
+            }
+        },
+        "centre": {
+            "required": [
+                "id",
+                "nom",
+                "adresa",
+                "telefon",
+                "poblacio"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "nom": {
+                    "type": "string"
+                },
+                "adresa": {
+                    "type": "string"
+                },
+                "telefon": {
+                    "type": "string"
+                },
+                "poblacio": {
+                    "type": "string"
+                }
+            }
+        },
+        "nouMissatge": {
+            "required": [
+                "nom"
+            ],
+            "properties": {
+                "nom": {
+                    "type": "string"
+                }
+            }
+        },
+        "missatge": {
+            "required": [
+                "id",
+                "nom"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "nom": {
+                    "type": "string"
+                }
+            }
+        },
+        "nouCurs": {
+            "required": [
+                "nom",
+                "idCentre",
+                "idAssignatura"
+            ],
+            "properties": {
+                "nom": {
+                    "type": "string"
+                },
+                "idCentre": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "idAssignatura": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "curs": {
+            "required": [
+                "id",
+                "nom",
+                "idCentre",
+                "idAssignatura"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "nom": {
+                    "type": "string"
+                },
+                "idCentre": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "idAssignatura": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "nouUsuari": {
+            "required": [
+                "email",
+                "nif",
+                "nom"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "nif": {
+                    "type": "string"
+                },
+                "nom": {
+                    "type": "string"
+                }
+            }
+        },
+        "usuari": {
+            "required": [
+                "id",
+                "email",
+                "nif",
+                "nom"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "nif": {
+                    "type": "string"
+                },
+                "nom": {
+                    "type": "string"
+                }
+            }
+        },
+        "novaAssignatura": {
+            "required": [
+                "nomAssignatura",
+                "idCentre"
+            ],
+            "properties": {
+                "nomAssignatura": {
+                    "type": "string"
+                },
+                "idCentre": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "assignatura": {
+            "required": [
+                "id",
+                "nomAssignatura",
+                "idCentre"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "nomAssignatura": {
+                    "type": "string"
+                },
+                "idCentre": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        }
+    }
+}
