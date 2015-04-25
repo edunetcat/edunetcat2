@@ -188,10 +188,12 @@ AppAsset::register($this);
     <!-- angular 1.4.0-rc.0 -->
     <script src="/js/vendor/angular.min.js"></script>
     <script src="/js/vendor/angular-route.min.js"></script>
+    <script src="/js/vendor/angular-resource.min.js"></script>
 
     <!-- Custom JavaScript -->
     <script src="/js/panellapp.js"></script>
     <script src="/js/controllers.js"></script>
+    <script src="/js/services.js"></script>
 
     
 

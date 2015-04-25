@@ -14,6 +14,12 @@ return [
 				] 
 		],
 		'components' => [ 
+				'request' => [
+					'class' => '\yii\web\Request',
+					'parsers' => [
+						'application/json' => 'yii\web\JsonParser'
+					]
+				],
 				'user' => [ 
 						'identityClass' => 'common\models\User',
 						'enableAutoLogin' => false 
@@ -76,7 +82,7 @@ return [
 				]
 				 
 		],
-		'params' => $params 
+		'params' => $params, 
 ];
 
 

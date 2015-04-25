@@ -24,22 +24,25 @@
 	                    	<label for="ordreCentres">Ordre</label>
 	                        <select name="ordreCentres" ng-model="orderProp">
 					          <option value="name">Per nom del centre</option>
-					          <option value="adreca">Per l'adreça</option>
+					          <option value="direccio">Per l'adreça</option>
 					        </select>
 
 					        <table class="table table-striped col-lg-12">
 					            <thead>
 					                <tr>
-					                    <th ng-click="orderProp = 'name'">Centre</th>
-					                    <th ng-click="orderProp = 'adreca'">Adreça</th>
-					                    <th ng-click="orderProp = 'adreca'">Adreça</th>                            
+					                    <th ng-click="orderProp = 'name'"width="30%">Centre</th>
+					                    <th ng-click="orderProp = 'direccio'"width="40%">Adreça</th>
+					                    <th ng-click="orderProp = 'direccio'" width="30%"></th>                            
 					                </tr>
 					            </thead>
 					            <tr ng-repeat="centre in centres | orderBy:orderProp">
-					                <td>{{centre.name}}</td>
-					                <td>{{centre.adreca}}</td>
-					                <td><a href="#/centres-edit/:id" class="btn btn-default btn-xs"><i class="fa fa-pencil fa-fw"></i> Editar</button></td>
-
+					                <td>{{centre.nom}}</td>
+					                <td>{{centre.direccio}}</td>
+					                <td>
+					                	<a href="#/centres-edit/{{centre.id}}" class="btn btn-default btn-xs"><i class="fa fa-pencil fa-fw"></i> Editar</a>
+					                	<a class="btn btn-default btn-xs" ng-click="deleteCentre(centre.id)"><i class="fa fa-trash fa-fw"></i> Eliminar</a>
+					                </td>
+									
 					            </tr>
 					        </table>
 

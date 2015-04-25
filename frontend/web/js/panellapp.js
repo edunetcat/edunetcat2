@@ -9,7 +9,13 @@
 **/
 
 var panellApp = angular.module('panellApp', [
-    'ngRoute', 'panellAppControllers'
+    // angular modules
+    'ngRoute', 
+    'ngResource', 
+    // controllers
+    'panellAppControllers', 
+    //services
+    'panellAppServices'
 ]);
 
 
@@ -21,9 +27,6 @@ var panellApp = angular.module('panellApp', [
 */
 panellApp.config(['$routeProvider', '$httpProvider',
     function($routeProvider, $httpProvider) {
-
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
         $routeProvider
         .when('/panell', {
@@ -40,7 +43,7 @@ panellApp.config(['$routeProvider', '$httpProvider',
             controller: 'CentresAddCtrl'
         })
         .when('/centres-edit/:id', {
-            templateUrl: 'ng-views/centres-add.html',
+            templateUrl: 'ng-views/centres-edit.html',
             controller: 'CentresEditCtrl'
         })
 

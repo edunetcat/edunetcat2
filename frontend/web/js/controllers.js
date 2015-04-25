@@ -2,25 +2,6 @@
 
 var _AUTHKEY;
 var _APIHOST = 'http://dev.api.edunet.cat';
-var config = {
-	headers:  {
-        'Access-Control-Allow-Origin': 'http://dev.api.edunet.cat',
-        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
-        'dataType': 'jsonp'
-    }
-};
-
-
-$.ajax({
-	url: '/index.php?r=site/token',
-	type: 'GET',
-	success: function(data) {
-		_AUTHKEY = data;
-	},
-	error: function(e) {
-		//en cas d'error no fer res
-	}
-});
 
 
 /**
@@ -61,48 +42,21 @@ panellAppControllers.controller('LogoutCtrl', ['$scope', '$location',
 *   
 *   @author: Biel <bielbcm@gmail.com>
 **/
-panellAppControllers.controller('CentresListCtrl', ['$scope', '$http', 
-	function($scope, $http) {
+panellAppControllers.controller('CentresListCtrl', ['$scope', '$http', 'CentresFactory',
+	function($scope, $http, CentresFactory) {
 
-		//$http.defaults.useXDomain = true;
-        //delete $http.defaults.headers.common['X-Requested-With'];
-        /*$.ajax({
-			url: _APIHOST +'/v1/centres',
-			type: 'GET',
-			dataType: "jsonp",
-			success: function(data) {
-				console.log(data);
-			},
-			error: function(e) {
-				console.log(e);
-			}
-		});*/
+		$scope.deleteCentre = function (centreId) {
+			//$scope.centre = CentreFactory.show({id: centreId});	
 
-		//carrega dades de l'API
-		$http.get(_APIHOST +'/v1/centres', config)
-		.success(function(data, status) {
-			alert(status);
-			$scope.centres = data;		
-		})
-		.error(function(data, status) {
-			alert(status);
-		});
+            CentresFactory.delete( centreId );
+            $scope.centres = CentresFactory.query();
+        };
 
-		// propietat utilitzada per definir l'ordre de visualització
-		$scope.orderProp = 'name';
-
-	}]);
-
-
-
-/**
-*   Controller que gestiona la plana /centres 
-*   
-*   @author: Biel <bielbcm@gmail.com>
-**/
-panellAppControllers.controller('CentresAddCtrl', ['$scope', '$http', 
-	function($scope, $http) {
+		// peticio al factory de centres
+		$scope.centres = CentresFactory.query();		
 		
+		$scope.orderProp = 'nom';
+
 	}]);
 
 
@@ -112,7 +66,52 @@ panellAppControllers.controller('CentresAddCtrl', ['$scope', '$http',
 *   
 *   @author: Biel <bielbcm@gmail.com>
 **/
-panellAppControllers.controller('CentresEditCtrl', ['$scope', '$http', '$routeParams', '$location',
-	function($scope, $http, $routeParams, $location) {
+panellAppControllers.controller('CentresAddCtrl', ['$scope', '$http', '$location', 'CentresFactory',
+	function($scope, $http, $location, CentresFactory) {
+		
+		$scope.addCentre = function () {
+            CentresFactory.create( $scope.centre );
+            $location.path('/centres');
+        }
+
+        $scope.cancel = function () {
+        	$location.path('/centres');	
+        }
 
 	}]);
+
+
+
+/**
+*   Controller que gestiona la plana /centres 
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('CentresEditCtrl', ['$scope', '$http', '$routeParams', '$location', 'CentreFactory',
+	function($scope, $http, $routeParams, $location, CentreFactory) {
+
+		$scope.updateCentre = function() {
+			CentreFactory.update( $scope.centre );
+			$location.path('/centres');
+
+			/*var requestURL = _APIHOST +'/centres/'+ $routeParams.id;
+			$http.put(requestURL, $scope.centre)
+				.success(function (response, status, headers, config) {
+					alert('success');
+					$scope.centre = response;
+				})
+				.error(function () {
+					alert('error')
+				});
+			*/
+		}
+
+        $scope.cancel = function () {
+        	$location.path('/centres');	
+        }
+		
+		// peticio al factory centre		
+		$scope.centre = CentreFactory.show({id: $routeParams.id});		
+
+	}]);
+
