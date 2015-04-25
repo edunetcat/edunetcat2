@@ -19,8 +19,8 @@ class CentresController extends ActiveController
 	        'class' => Cors::className(),
 	        'cors' => [
 	            'Origin' => ['*'],
-	            'Access-Control-Request-Method' => ['*'],
-	            //'Access-Control-Request-Method' => ['POST', 'GET', 'PUT', 'DELETE', 'HEAD', 'OPTIONS'],
+	            //'Access-Control-Request-Method' => ['*'],
+	            'Access-Control-Request-Method' => ['POST', 'GET', 'PUT', 'DELETE', 'HEADER', 'OPTIONS'],
 	            'Access-Control-Request-Headers' => ['*'],
 	            //'Access-Control-Request-Headers' => ['Expiry'],
 
