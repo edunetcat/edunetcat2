@@ -107,7 +107,7 @@ AppAsset::register($this);
                         <li><a href=""><i class="fa fa-gear fa-fw"></i> Compte</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="#/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->

@@ -1,6 +1,15 @@
 'user strict';
 
 var _AUTHKEY;
+var _APIHOST = 'http://dev.api.edunet.cat';
+var config = {
+	headers:  {
+        'Access-Control-Allow-Origin': 'http://dev.api.edunet.cat',
+        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
+        'dataType': 'jsonp'
+    }
+};
+
 
 $.ajax({
 	url: '/index.php?r=site/token',
@@ -26,7 +35,7 @@ var panellAppControllers = angular.module('panellAppControllers', []);
 
 
 /**
-*   Controller que gestiona la plana /panell 
+*   Controller que gestiona la plana /panell. 
 *   
 *   @author: Biel <bielbcm@gmail.com>
 **/
@@ -37,15 +46,13 @@ panellAppControllers.controller('PanellCtrl', ['$scope',
 
 
 /**
-*   Controller que gestiona la plana /panell 
+*   Controller que gestiona la plana /logout 
 *   
 *   @author: Biel <bielbcm@gmail.com>
 **/
 panellAppControllers.controller('LogoutCtrl', ['$scope', '$location',
 	function($scope, $location) {
-		console.log("redirect");
-		//$location.path("http://dev.edunet.cat/logout.php");
-		window.location = '/index.php?r=site/logout';
+		window.location = '/logout.php';
 	}]);
 
 
@@ -57,10 +64,28 @@ panellAppControllers.controller('LogoutCtrl', ['$scope', '$location',
 panellAppControllers.controller('CentresListCtrl', ['$scope', '$http', 
 	function($scope, $http) {
 
-		//TODO: fer que carregui conecti a l'API
+		//$http.defaults.useXDomain = true;
+        //delete $http.defaults.headers.common['X-Requested-With'];
+        /*$.ajax({
+			url: _APIHOST +'/v1/centres',
+			type: 'GET',
+			dataType: "jsonp",
+			success: function(data) {
+				console.log(data);
+			},
+			error: function(e) {
+				console.log(e);
+			}
+		});*/
+
 		//carrega dades de l'API
-		$http.get('js/todelete.json').success(function(data) {
+		$http.get(_APIHOST +'/v1/centres', config)
+		.success(function(data, status) {
+			alert(status);
 			$scope.centres = data;		
+		})
+		.error(function(data, status) {
+			alert(status);
 		});
 
 		// propietat utilitzada per definir l'ordre de visualització

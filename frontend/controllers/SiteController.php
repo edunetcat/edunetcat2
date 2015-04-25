@@ -176,23 +176,6 @@ class SiteController extends Controller {
 		}
 	}
 	
-	/**
-	 * Mètode per fer logout
-	 *
-	 * @author : Biel <bielbcm@gmail.com>
-	 *        
-	 */
-	public function actionLogout() {
-		$session = Yii::$app->session;
-		if (isset ( $session ['isLogged'] ) && isset ( $session ['authKey'] )) {
-			unset ( $_SESSION ['isLogged'] );
-			unset ( $_SESSION ['authKey'] );
-		}
-		
-		return $this->render ( 'login', [ 
-				'model' => $model 
-		] );
-	}
 	
 	/**
 	 * Mètode per realitzar peticions rest.

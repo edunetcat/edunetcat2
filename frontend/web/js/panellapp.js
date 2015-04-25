@@ -19,8 +19,12 @@ var panellApp = angular.module('panellApp', [
 *
 *   @author: Biel <bielbcm@gmail.com>
 */
-panellApp.config(['$routeProvider',
-    function($routeProvider) {
+panellApp.config(['$routeProvider', '$httpProvider',
+    function($routeProvider, $httpProvider) {
+
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
         $routeProvider
         .when('/panell', {
             templateUrl: 'ng-views/panell.html',
