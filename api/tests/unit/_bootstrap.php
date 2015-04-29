@@ -1,2 +1,4 @@
 <?php
-// Here you can initialize variables that will for your tests
+// Here you can initialize variables that will be available to your tests
+require_once(__DIR__ . '/../../../../yii2-advanced-api/vendor/autoload.php');
+require_once(__DIR__ . '/../../../../yii2-advanced-api/vendor/yiisoft/yii2/Yii.php');
