@@ -3,7 +3,7 @@
 # suite for unit (internal) tests.
 class_name: UnitTester
 modules:
-    enabled: [PhpBrowser, REST, Asserts, UnitHelper, Yii2]
+    enabled: [PhpBrowser, REST, Asserts, UnitHelper, Yii2, Db]
     config:
        PhpBrowser: 
                url: 'http://localhost' 

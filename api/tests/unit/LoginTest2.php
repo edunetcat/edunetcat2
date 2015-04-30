@@ -1,7 +1,7 @@
 <?php
 
 
-class LoginTest extends \Codeception\TestCase\Test
+class LoginTest2 extends \Codeception\TestCase\Test
 {
   public function testValidation()
     {

@@ -1,10 +1,10 @@
 <?php
 
 
-class provaUnitTest extends \Codeception\TestCase\Test
+class ProvaTest2 extends \Codeception\TestCase\Test
 {
     /**
-     * @var \UnitTester
+     * @var \FunctionalTester
      */
     protected $tester;
 
