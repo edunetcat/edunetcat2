@@ -5,9 +5,14 @@ class_name: UnitTester
 modules:
     enabled: [PhpBrowser, REST, Asserts, UnitHelper, Yii2, Db]
     config:
-       PhpBrowser: 
-               url: 'http://localhost' 
-       REST: 
-               url: 'http://localhost' 
-       Yii2:
-               configFile: config/main.php
+        Db:
+            dsn: 'mysql:host=localhost;dbname=edunetcat'
+            user: 'root'
+            password: ''
+               
+        PhpBrowser: 
+                url: 'http://dev.api.edunet.cat/v1' 
+        REST: 
+                url: 'http://dev.api.edunet.cat/v1/' 
+        Yii2:
+                configFile: config/main.php
