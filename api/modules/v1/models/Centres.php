@@ -16,26 +16,26 @@ class Centres extends ActiveRecord {
 	public static function tableName() {
 		return 'centres';
 	}
-	
+
 	/**
 	 * defineix les regles de validació
 	 */
 	public function rules() {
-		return [ 
-				[ 
-						[ 
-								'nom' 
+		return [
+				[
+						[
+								'nom'
 						],
-						'required' 
+						'required'
 				],
-				[ 
-						[ 
+				[
+						[
 								'direccio',
 								'telefon',
-								'poblacio' 
+								'poblacio'
 						],
-						'default' 
-				] 
+						'default'
+				]
 		];
 	}
 }

@@ -5,16 +5,16 @@ namespace api\modules\v1\models;
 use \yii\db\ActiveRecord;
 
 /**
- * Model assignatures
+ * Model cursos
  *
  * @author Marcos
  */
-class Assignatures extends ActiveRecord {
+class curs extends ActiveRecord {
     /**
      * @inheritdoc
      */
     public static function tableName() {
-        return 'assignatures';
+        return 'curs';
     }
     
     /**
@@ -24,8 +24,9 @@ class Assignatures extends ActiveRecord {
         return [ 
                 [ 
                         [ 
-                                'id',
-                                'nomAssignatura' 
+                                'nom',
+                                'idCentre',
+                                'idAssignatura' 
                         ],
                         'required' 
                 ] 

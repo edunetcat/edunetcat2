@@ -24,15 +24,16 @@ class Missatges extends ActiveRecord {
         return [ 
                 [ 
                         [ 
-                                'nom' 
+                                'Missatge' 
                         ],
                         'required' 
                 ],
                 [ 
                         [ 
-                                'direccio',
-                                'telefon',
-                                'poblacio' 
+                                'DataEnvio',
+                                'HoraEnvio',
+                                'Descripcio',
+                                'ArxiuAdjunt' 
                         ],
                         'default' 
                 ] 

@@ -6,11 +6,12 @@ use yii\rest\ActiveController;
 use yii\filters\Cors;
 
 /**
- * Missatges Controller API
+ * Curs Controller API
  *
  * @author Marcos
  */
-class MissatgesController extends ActiveController {
+class CursosController extends ActiveController {
+    public $modelClass = 'api\modules\v1\models\Curs'; // encara que la clase sigui CursosController, aqui hem de aclarar que el model es Curs
     public function behaviors() {
         $behaviors = parent::behaviors ();
         $behaviors ['corsFilter'] = [ 
@@ -35,11 +36,8 @@ class MissatgesController extends ActiveController {
         ];
         // 'Access-Control-Request-Headers' => ['Expiry'],
         
-        
-        
         return $behaviors;
     }
-    public $modelClass = 'api\modules\v1\models\Missatges';
 }
 
 
