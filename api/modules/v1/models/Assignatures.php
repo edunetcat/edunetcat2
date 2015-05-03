@@ -9,25 +9,25 @@ use \yii\db\ActiveRecord;
  *
  * @author Marcos
  */
-class Centres extends ActiveRecord {
+class Assignatures extends ActiveRecord {
 	/**
 	 * @inheritdoc
 	 */
 	public static function tableName() {
 		return 'assignatures';
 	}
-
+	
 	/**
 	 * defineix les regles de validació
 	 */
 	public function rules() {
-		return [
-				[
-						[
-								'nomAssignatura'
+		return [ 
+				[ 
+						[ 
+								'nomAssignatura' 
 						],
-						'required'
-				]
+						'required' 
+				] 
 		];
 	}
 }
