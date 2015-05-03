@@ -48,8 +48,19 @@ panellAppControllers.controller('CentresListCtrl', ['$scope', '$http', 'CentresF
 		$scope.deleteCentre = function (centreId) {
 			//$scope.centre = CentreFactory.show({id: centreId});	
 
-            CentresFactory.delete( centreId );
-            $scope.centres = CentresFactory.query();
+            //CentresFactory.delete( centreId );
+            //$scope.centres = CentresFactory.query();
+
+            var requestURL = _APIHOST +'/centres/'+ centreId;
+            $http({method: 'DELETE', url: requestURL})
+				.success(function (data) {
+					alert('success');
+					$scope.centre = response;
+				})
+				.error(function (e) {
+					alert('error');
+					console.log(e);
+				});
         };
 
 		// peticio al factory de centres
@@ -93,6 +104,70 @@ panellAppControllers.controller('CentresEditCtrl', ['$scope', '$http', '$routePa
 		$scope.updateCentre = function() {
 			CentreFactory.update( $scope.centre );
 			$location.path('/centres');
+		}
+
+        $scope.cancel = function () {
+        	$location.path('/centres');	
+        }
+		
+		// peticio al factory centre		
+		$scope.centre = CentreFactory.show({id: $routeParams.id});		
+
+	}]);
+
+
+
+/**
+*   Controller que gestiona la plana /usuaris 
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('UsuarisListCtrl', ['$scope', '$http', 'AlumnesFactory',
+	function($scope, $http, CentresFactory) {
+
+		// peticio al factory de centres
+		$scope.centres = CentresFactory.query();		
+		
+		$scope.orderProp = 'nom';
+
+	}]);
+
+/**
+*   Controller que crea nous alumnes
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('UsuarisAddCtrl', ['$scope', '$http', '$location', 'UsuarisFactory', 'CentresFactory',
+	function($scope, $http, $location, UsuarisFactory, CentresFactory) {
+		
+		$scope.addPersona = function () {
+
+            console.log($scope.usuari);
+
+            //UsuarisFactory.create( $scope.usuari );
+            //$location.path('/usuaris');
+        }
+
+        $scope.cancel = function () {
+        	$location.path('/usuaris');	
+        }
+
+        // peticio al factory de centres
+		$scope.centres = CentresFactory.query();	
+
+	}]);
+
+/**
+*   Controller que edita alumnes
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('UsuarisEditCtrl', ['$scope', '$http', '$routeParams', '$location', 'UsuarisFactory',
+	function($scope, $http, $routeParams, $location, UsuarisFactory) {
+
+		$scope.updateCentre = function() {
+			UsuarisFactory.update( $scope.centre );
+			$location.path('/usuaris');
 
 			/*var requestURL = _APIHOST +'/centres/'+ $routeParams.id;
 			$http.put(requestURL, $scope.centre)
@@ -107,11 +182,10 @@ panellAppControllers.controller('CentresEditCtrl', ['$scope', '$http', '$routePa
 		}
 
         $scope.cancel = function () {
-        	$location.path('/centres');	
+        	$location.path('/usuaris');	
         }
 		
 		// peticio al factory centre		
-		$scope.centre = CentreFactory.show({id: $routeParams.id});		
+		$scope.centre = UsuarisFactory.show({id: $routeParams.id});		
 
 	}]);
-

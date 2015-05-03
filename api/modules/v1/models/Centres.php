@@ -10,32 +10,33 @@ use \yii\db\ActiveRecord;
  * @author Marcos
  */
 class Centres extends ActiveRecord {
-	/**
-	 * @inheritdoc
-	 */
-	public static function tableName() {
-		return 'centres';
-	}
-
-	/**
-	 * defineix les regles de validació
-	 */
-	public function rules() {
-		return [
-				[
-						[
-								'nom'
-						],
-						'required'
-				],
-				[
-						[
-								'direccio',
-								'telefon',
-								'poblacio'
-						],
-						'default'
-				]
-		];
-	}
+    /**
+     * @inheritdoc
+     */
+    public static function tableName() {
+        return 'centres';
+    }
+    
+    /**
+     * defineix les regles de validació
+     */
+    public function rules() {
+        return [ 
+                [ 
+                        [ 
+                                'nom' 
+                        ],
+                        'required' 
+                ],
+                [ 
+                        [ 
+                                'direccio',
+                                'telefon',
+                                'poblacio' 
+                        ],
+                        'default' 
+                ] 
+        ]
+        ;
+    }
 }

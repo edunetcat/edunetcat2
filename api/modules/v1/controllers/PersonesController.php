@@ -12,7 +12,9 @@ use Yii;
  * @author Marcos
  */
 class PersonesController extends ActiveController {
+
 	public $modelClass = 'api\modules\v1\models\Persona';
+
 	public function actionLamevainfo($key) {
 		$persona = Persona::findOne ( [ 
 				'authKey' => $key 
@@ -22,6 +24,7 @@ class PersonesController extends ActiveController {
 			return $persona;
 		else
 			return 'error';
+		
 		return print_r ( $key ); // Yii::app ()->getRequest ()->getQuery ( 'access-key' );
 	}
 }

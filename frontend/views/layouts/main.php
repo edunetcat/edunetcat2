@@ -137,6 +137,9 @@ AppAsset::register($this);
                             <a href="/#/centres"><i class="fa fa-building fa-fw"></i> Administrar Centres</a>
                         </li>
                         <li>
+                            <a href="/#/usuaris"><i class="fa fa-building fa-fw"></i> Administrar Usuaris</a>
+                        </li>
+                        <li>
                             <a href=""><i class="fa fa-sign-in fa-fw"></i> Tràmits</a>
                         </li>
                         <li>

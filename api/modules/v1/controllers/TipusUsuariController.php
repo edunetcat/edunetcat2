@@ -6,11 +6,11 @@ use yii\rest\ActiveController;
 use yii\filters\Cors;
 
 /**
- * Centres Controller API
+ * TipusUsuari Controller API
  *
- * @author Marcos
+ * @author Biel
  */
-class CentresController extends ActiveController
+class TipusUsuariController extends ActiveController
 {
     public function behaviors()
 	{
@@ -27,7 +27,7 @@ class CentresController extends ActiveController
         return $behaviors;
 	}
 
-    public $modelClass = 'api\modules\v1\models\Centres';    
+    public $modelClass = 'api\modules\v1\models\TipusUsuari';    
 
 }
 

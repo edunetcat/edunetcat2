@@ -2,6 +2,7 @@
 $params = array_merge ( require (__DIR__ . '/../../common/config/params.php'), require (__DIR__ . '/../../common/config/params-local.php'), require (__DIR__ . '/params.php'), require (__DIR__ . '/params-local.php') );
 
 return [ 
+        
         'id' => 'app-api',
         'basePath' => dirname ( __DIR__ ),
         'bootstrap' => [ 
@@ -15,7 +16,6 @@ return [
         ],
         'components' => [ 
                 'request' => [ 
-                        
                         'class' => '\yii\web\Request',
                         'parsers' => [ 
                                 'application/json' => 'yii\web\JsonParser' 
@@ -51,6 +51,13 @@ return [
                                 ],
                                 [ 
                                         'class' => 'yii\rest\UrlRule',
+                                        'controller' => 'v1/tipususuari',
+                                        'tokens' => [ 
+                                                '{id}' => '<id:\\w+>' 
+                                        ] 
+                                ],
+                                [ 
+                                        'class' => 'yii\rest\UrlRule',
                                         'controller' => 'v1/missatges',
                                         'tokens' => [ 
                                                 '{id}' => '<id:\\w+>' 
@@ -77,13 +84,16 @@ return [
                                                 '{id}' => '<id:\\w+>' 
                                         ] 
                                 ],
+                                
                                 'v1/login/<user>/<password>' => 'v1/login/login',
                                 'v1/lamevainfo/<key>' => '/v1/persones/lamevainfo' 
                         ] 
                 ] 
-        ],
+        ]
+        ,
         'params' => $params 
-];
+]
+;
 
 
 

@@ -24,7 +24,6 @@ class Assignatures extends ActiveRecord {
         return [ 
                 [ 
                         [ 
-                                'id',
                                 'nomAssignatura' 
                         ],
                         'required' 

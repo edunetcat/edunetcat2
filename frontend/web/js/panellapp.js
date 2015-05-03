@@ -33,7 +33,7 @@ panellApp.config(['$routeProvider', '$httpProvider',
             templateUrl: 'ng-views/panell.html',
             controller: 'PanellCtrl'
         })
-
+        //vistes administració de centres
         .when('/centres', {
             templateUrl: 'ng-views/centres.html',
             controller: 'CentresListCtrl'
@@ -45,6 +45,19 @@ panellApp.config(['$routeProvider', '$httpProvider',
         .when('/centres-edit/:id', {
             templateUrl: 'ng-views/centres-edit.html',
             controller: 'CentresEditCtrl'
+        })
+        //vistes administració d'usuaris
+        .when('/usuaris', {
+            templateUrl: 'ng-views/usuaris.html',
+            controller: 'UsuarisListCtrl'
+        })
+        .when('/usuaris-add', {
+            templateUrl: 'ng-views/usuaris-add.html',
+            controller: 'UsuarisAddCtrl'
+        })
+        .when('/usuaris-edit', {
+            templateUrl: 'ng-views/usuaris-edit.html',
+            controller: 'UsuarisEditCtrl'
         })
 
         .when('/logout', {
