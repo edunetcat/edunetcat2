@@ -48,8 +48,19 @@ panellAppControllers.controller('CentresListCtrl', ['$scope', '$http', 'CentresF
 		$scope.deleteCentre = function (centreId) {
 			//$scope.centre = CentreFactory.show({id: centreId});	
 
-            CentresFactory.delete( centreId );
-            $scope.centres = CentresFactory.query();
+            //CentresFactory.delete( centreId );
+            //$scope.centres = CentresFactory.query();
+
+            var requestURL = _APIHOST +'/centres/'+ centreId;
+            $http({method: 'DELETE', url: requestURL})
+				.success(function (data) {
+					alert('success');
+					$scope.centre = response;
+				})
+				.error(function (e) {
+					alert('error');
+					console.log(e);
+				});
         };
 
 		// peticio al factory de centres
