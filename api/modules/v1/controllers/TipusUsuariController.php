@@ -10,25 +10,34 @@ use yii\filters\Cors;
  *
  * @author Biel
  */
-class TipusUsuariController extends ActiveController
-{
-    public function behaviors()
-	{
-        $behaviors = parent::behaviors();
-        $behaviors['corsFilter'] = [
-	        'class' => Cors::className(),
-	        'cors' => [
-	            'Origin' => ['*'],
-	            'Access-Control-Request-Method' => ['POST', 'GET', 'PUT', 'DELETE', 'HEADER', 'OPTIONS'],
-	            'Access-Control-Request-Headers' => ['*']
-	        ]
+class TipususuariController extends ActiveController {
+    public function behaviors() {
+        $behaviors = parent::behaviors ();
+        $behaviors ['corsFilter'] = [ 
+                'class' => Cors::className (),
+                'cors' => [ 
+                        'Origin' => [ 
+                                '*' 
+                        ],
+                        // 'Access-Control-Request-Method' => ['*'],
+                        'Access-Control-Request-Method' => [ 
+                                'POST',
+                                'GET',
+                                'PUT',
+                                'DELETE',
+                                'HEADER',
+                                'OPTIONS' 
+                        ],
+                        'Access-Control-Request-Headers' => [ 
+                                '*' 
+                        ] 
+                ] 
         ];
-
+        // 'Access-Control-Request-Headers' => ['Expiry'],
+        
         return $behaviors;
-	}
-
-    public $modelClass = 'api\modules\v1\models\TipusUsuari';    
-
+    }
+    public $modelClass = 'api\modules\v1\models\Tipususuari';
 }
 
 

@@ -9,25 +9,25 @@ use \yii\db\ActiveRecord;
  *
  * @author Biel
  */
-class TipusUsuari extends ActiveRecord {
-	/**
-	 * @inheritdoc
-	 */
-	public static function tableName() {
-		return 'tipususuari';
-	}
-
-	/**
-	 * defineix les regles de validació
-	 */
-	public function rules() {
-		return [ 
-			[ 
-				[ 
-					'nom' 
-				],
-				'required' 
-			]
-		];
-	}
+class Tipususuari extends ActiveRecord {
+    /**
+     * @inheritdoc
+     */
+    public static function tableName() {
+        return 'tipususuari';
+    }
+    
+    /**
+     * defineix les regles de validació
+     */
+    public function rules() {
+        return [ 
+                [ 
+                        [ 
+                                'nomTipususuari' 
+                        ],
+                        'required' 
+                ] 
+        ];
+    }
 }

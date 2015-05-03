@@ -84,16 +84,15 @@ return [
                                                 '{id}' => '<id:\\w+>' 
                                         ] 
                                 ],
-                                
+                                'v1/tipususuari' => 'v1/tipususuari',
+                                'v1/tipususuari/<id>' => 'v1/tipususuari',
                                 'v1/login/<user>/<password>' => 'v1/login/login',
                                 'v1/lamevainfo/<key>' => '/v1/persones/lamevainfo' 
                         ] 
                 ] 
-        ]
-        ,
+        ],
         'params' => $params 
-]
-;
+];
 
 
 
