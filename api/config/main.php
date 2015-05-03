@@ -42,40 +42,48 @@ return [
 						'showScriptName' => false,
 						'rules' => [ 
 								[ 
-										'class' => 'yii\rest\UrlRule',
-										'controller' => 'v1/centres',
-										'tokens' => [ 
-												'{id}' => '<id:\\w+>' 
-										] 
+									'class' => 'yii\rest\UrlRule',
+									'controller' => 'v1/centres',
+									'tokens' => [ 
+											'{id}' => '<id:\\w+>' 
+									] 
 								],
 								[ 
-										'class' => 'yii\rest\UrlRule',
-										'controller' => 'v1/missatges',
-										'tokens' => [ 
-												'{id}' => '<id:\\w+>' 
-										] 
+									'class' => 'yii\rest\UrlRule',
+									'controller' => 'v1/tipususuari',
+									'tokens' => [ 
+											'{id}' => '<id:\\w+>' 
+									] 
 								],
 								[ 
-										'class' => 'yii\rest\UrlRule',
-										'controller' => 'v1/cursos',
-										'tokens' => [ 
-												'{id}' => '<id:\\w+>' 
-										] 
+									'class' => 'yii\rest\UrlRule',
+									'controller' => 'v1/missatges',
+									'tokens' => [ 
+											'{id}' => '<id:\\w+>' 
+									] 
 								],
 								[ 
-										'class' => 'yii\rest\UrlRule',
-										'controller' => 'v1/assignatures',
-										'tokens' => [ 
-												'{id}' => '<id:\\w+>' 
-										] 
+									'class' => 'yii\rest\UrlRule',
+									'controller' => 'v1/cursos',
+									'tokens' => [ 
+											'{id}' => '<id:\\w+>' 
+									] 
 								],
 								[ 
-										'class' => 'yii\rest\UrlRule',
-										'controller' => 'v1/persona',
-										'tokens' => [ 
-												'{id}' => '<id:\\w+>' 
-										] 
+									'class' => 'yii\rest\UrlRule',
+									'controller' => 'v1/assignatures',
+									'tokens' => [ 
+											'{id}' => '<id:\\w+>' 
+									] 
 								],
+								[ 
+									'class' => 'yii\rest\UrlRule',
+									'controller' => 'v1/persona',
+									'tokens' => [ 
+											'{id}' => '<id:\\w+>' 
+									] 
+								],
+
 								'v1/login/<user>/<password>' => 'v1/login/login',
 								'v1/lamevainfo/<key>' => '/v1/persones/lamevainfo' 
 						] 

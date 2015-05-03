@@ -5,29 +5,29 @@ namespace api\modules\v1\models;
 use \yii\db\ActiveRecord;
 
 /**
- * Model assignatures
+ * Model tipususuari
  *
- * @author Marcos
+ * @author Biel
  */
-class Assignatures extends ActiveRecord {
+class TipusUsuari extends ActiveRecord {
 	/**
 	 * @inheritdoc
 	 */
 	public static function tableName() {
-		return 'assignatures';
+		return 'tipususuari';
 	}
-	
+
 	/**
 	 * defineix les regles de validació
 	 */
 	public function rules() {
 		return [ 
+			[ 
 				[ 
-					[ 
-						'nomAssignatura' 
-					],
-					'required' 
-				] 
+					'nom' 
+				],
+				'required' 
+			]
 		];
 	}
 }

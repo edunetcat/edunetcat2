@@ -6,11 +6,11 @@ use yii\rest\ActiveController;
 use yii\filters\Cors;
 
 /**
- * Centres Controller API
+ * Usuaris Controller API
  *
- * @author Marcos
+ * @author Biel
  */
-class CentresController extends ActiveController
+class UsuarisController extends ActiveController
 {
     public function behaviors()
 	{
@@ -20,14 +20,14 @@ class CentresController extends ActiveController
 	        'cors' => [
 	            'Origin' => ['*'],
 	            'Access-Control-Request-Method' => ['POST', 'GET', 'PUT', 'DELETE', 'HEADER', 'OPTIONS'],
-	            'Access-Control-Request-Headers' => ['*']
+	            'Access-Control-Request-Headers' => ['*'],
 	        ]
         ];
 
         return $behaviors;
 	}
 
-    public $modelClass = 'api\modules\v1\models\Centres';    
+    public $modelClass = 'api\modules\v1\models\Persona';    
 
 }
 

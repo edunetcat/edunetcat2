@@ -12,7 +12,9 @@ use yii\filters\auth\HttpBearerAuth;
 use yii\filters\auth\QueryParamAuth;
 
 class LoginController extends ActiveController {
+
 	public $modelClass = 'app\models\Persona';
+	
 	public function actionLogin($user, $password) {
 		$persona = Persona::findOne ( [ 
 				'email' => $user,

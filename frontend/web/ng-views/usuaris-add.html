@@ -1,0 +1,114 @@
+<div ng-controller="UsuarisAddCtrl">
+
+	<div class="row">
+	    <div class="col-lg-12">
+	        <h1 class="page-header">Afegir usuari</h1>
+	    </div>
+	    <!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+	<div class="row">
+	    <div class="col-lg-12">
+	        <!-- /.panel -->
+	        <div class="panel panel-default">
+	            <div class="panel-heading">
+	                
+	            </div>
+	            <!-- /.panel-heading -->
+	            <div class="panel-body">
+	                <div class="row">
+	                    <div class="col-lg-12">
+
+					        <form enctype="application/x-www-form-urlencoded">
+							  	<div class="form-group">
+								  	<div class="row">
+								  		<div class="col-md-3">
+										    <label for="nom">Nom:</label>
+										    <input ng-model="usuari.nom" class="form-control" id="nom" placeholder="Nom de l'usuari">							  			
+								  		</div>
+								  		<div class="col-md-5">
+										    <label for="cognoms">Cognoms:</label>
+										    <input ng-model="usuari.cognoms" class="form-control" id="cognoms"  placeholder="Cognoms de l'usuari">
+								  		</div>
+								  		<div class="col-md-4">
+										    <label for="NIF">NIF:</label>
+										    <input ng-model="usuari.NIF" class="form-control" id="NIF">										    
+								  		</div>								  		
+								  	</div>
+							  	</div>
+							  	<div class="form-group">
+							  		<div class="row">
+								  		<div class="col-md-8">
+										    <label for="email">email:</label>
+										    <input ng-model="usuari.email" class="form-control" id="email"  placeholder="Email amb el que s'accedirà">
+								  		</div>
+								  		<div class="col-md-4">
+										    <label for="password">Contrasenya:</label>
+										    <input ng-model="usuari.password" class="form-control" id="password" type="password">								  		
+								  		</div>
+								  	</div>
+							  	</div>
+							  	<div class="form-group">
+							  		<div class="row">
+								  		<div class="col-md-8">
+										    <label for="idCentre">Centre:</label>
+											<select ng-model="usuari.idCentre" class="form-control" id="idCentre">
+											    <option ng-repeat="centre in centres | orderBy:'nom'" value="{{centre.id}}">{{centre.nom}}</option>										    
+											</select>											
+								  		</div>
+								  		<div class="col-md-4">
+										    <label for="idTipusUsuari">Tipus Usuari:</label>
+										    <input ng-model="usuari.idTipusUsuari" class="form-control" id="idTipusUsuari">										    
+								  		</div>
+								  	</div>
+							  	</div>
+							  	<div class="form-group">
+							  		<div class="row">
+								  		<div class="col-md-4">
+										    <label for="dataNaixement">Data Naixement:</label>
+										    <input ng-model="usuari.dataNaixement" class="form-control" id="dataNaixement" placeholder="dd/mm/aaaa" type="date" >										    
+								  		</div>
+								  	</div>
+							  	</div>
+							  	<div class="form-group">
+							  		<div class="row">
+								  		<div class="col-md-8">
+										    <label for="direccio">Adreça:</label>
+										    <input ng-model="usuari.direccio" class="form-control" id="direccio">
+								  		</div>
+								  		<div class="col-md-4">
+										    <label for="poblacio">Població:</label>
+										    <input ng-model="usuari.poblacio" class="form-control" id="poblacio">								  		
+								  		</div>
+								  	</div>
+							  	</div>
+							  <div class="form-group">
+							    <label for="nivell">Nivell:</label>
+							    <input ng-model="usuari.nivell" class="form-control" id="nivell">
+							  </div>					  	
+
+							    <button type="submit" class="btn btn-success" ng-click="addPersona()">Guardar</button>
+							    <button type="submit" class="btn" ng-click="cancel()">Cancelar</button>
+							</form>
+
+	                    </div>
+	                    <!-- /.col-lg-4 (nested) -->
+	                    <div class="col-lg-8">
+	                        <div id="morris-bar-chart"></div>
+	                    </div>
+	                    <!-- /.col-lg-8 (nested) -->
+	                </div>
+	                <!-- /.row -->
+	            </div>
+	            <!-- /.panel-body -->
+	        </div>
+	        <!-- /.panel -->                    
+	    </div>
+	    <!-- /.col-lg-12 -->
+
+	   
+	</div>
+	<!-- /.row -->
+
+</div>	
