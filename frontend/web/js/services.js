@@ -24,19 +24,28 @@ panellAppServices.factory('CentreFactory', function ($resource) {
 
 //factory services per fer peticions d'usuaris
 panellAppServices.factory('UsuarisFactory', function ($resource) {
-    return $resource(_APIHOST +'/v1/alumnes', {}, {
+    return $resource(_APIHOST +'/v1/persones', {}, {
         query: { method: 'GET', isArray: true },
         create: { method: 'POST' }
     })
 });
 
-panellAppServices.factory('UsuarisFactory', function ($resource) {
-    return $resource(_APIHOST +'/v1/centres/:id', {id: '@id'}, {
+panellAppServices.factory('UsuariFactory', function ($resource) {
+    return $resource(_APIHOST +'/v1/persones/:id', {id: '@id'}, {
         show: { method: 'GET' },
         update: { method: 'PUT', params: {id: '@id'} },
         delete: { method: 'DELETE', params: {id: '@id'} }
     })
 });
+
+
+//factory services per fer peticions de tipus d'u'suari
+panellAppServices.factory('TipusUsuarisFactory', function ($resource) {
+    return $resource(_APIHOST +'/v1/tipususuari', {}, {
+        query: { method: 'GET', isArray: true }
+    })
+});
+
 
 
 

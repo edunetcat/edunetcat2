@@ -55,11 +55,13 @@
 										    <label for="idCentre">Centre:</label>
 											<select ng-model="usuari.idCentre" class="form-control" id="idCentre">
 											    <option ng-repeat="centre in centres | orderBy:'nom'" value="{{centre.id}}">{{centre.nom}}</option>										    
-											</select>											
+											</select>
 								  		</div>
 								  		<div class="col-md-4">
 										    <label for="idTipusUsuari">Tipus Usuari:</label>
-										    <input ng-model="usuari.idTipusUsuari" class="form-control" id="idTipusUsuari">										    
+										    <select ng-model="usuari.tipusUsuari" class="form-control" id="idTipusUsuari">
+											    <option ng-repeat="tipus in tipusUsuari | orderBy:'nom'" value="{{tipus.id}}">{{tipus.nomTipusUsuari}}</option>										    
+											</select>									    
 								  		</div>
 								  	</div>
 							  	</div>

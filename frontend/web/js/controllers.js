@@ -122,14 +122,11 @@ panellAppControllers.controller('CentresEditCtrl', ['$scope', '$http', '$routePa
 *   
 *   @author: Biel <bielbcm@gmail.com>
 **/
-panellAppControllers.controller('UsuarisListCtrl', ['$scope', '$http', 'AlumnesFactory',
-	function($scope, $http, CentresFactory) {
-
+panellAppControllers.controller('UsuarisListCtrl', ['$scope', '$http', 'UsuarisFactory',
+	function($scope, $http, UsuarisFactory) {
 		// peticio al factory de centres
-		$scope.centres = CentresFactory.query();		
-		
+		$scope.usuaris = UsuarisFactory.query();				
 		$scope.orderProp = 'nom';
-
 	}]);
 
 /**
@@ -137,15 +134,12 @@ panellAppControllers.controller('UsuarisListCtrl', ['$scope', '$http', 'AlumnesF
 *   
 *   @author: Biel <bielbcm@gmail.com>
 **/
-panellAppControllers.controller('UsuarisAddCtrl', ['$scope', '$http', '$location', 'UsuarisFactory', 'CentresFactory',
-	function($scope, $http, $location, UsuarisFactory, CentresFactory) {
+panellAppControllers.controller('UsuarisAddCtrl', ['$scope', '$location', 'CentresFactory', 'TipusUsuarisFactory', 'UsuarisFactory', 
+	function($scope, $location, CentresFactory, TipusUsuarisFactory, UsuarisFactory) {
 		
 		$scope.addPersona = function () {
-
-            console.log($scope.usuari);
-
-            //UsuarisFactory.create( $scope.usuari );
-            //$location.path('/usuaris');
+            UsuarisFactory.create($scope.usuari);
+            $location.path('/usuaris');
         }
 
         $scope.cancel = function () {
@@ -153,7 +147,11 @@ panellAppControllers.controller('UsuarisAddCtrl', ['$scope', '$http', '$location
         }
 
         // peticio al factory de centres
-		$scope.centres = CentresFactory.query();	
+		$scope.centres = CentresFactory.query();
+
+		// peticio al factory de tipus d'usuari
+		$scope.tipusUsuari = TipusUsuarisFactory.query();
+
 
 	}]);
 

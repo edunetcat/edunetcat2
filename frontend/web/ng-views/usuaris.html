@@ -1,4 +1,4 @@
-<div ng-controller="CentresListCtrl">
+<div ng-controller="UsuarisListCtrl">
 
 	<div class="row">
 	    <div class="col-lg-12">
@@ -30,17 +30,22 @@
 					        <table class="table table-striped col-lg-12">
 					            <thead>
 					                <tr>
-					                    <th ng-click="orderProp = 'name'"width="30%">Centre</th>
-					                    <th ng-click="orderProp = 'direccio'"width="40%">Adreça</th>
-					                    <th ng-click="orderProp = 'direccio'" width="30%"></th>                            
+					                    <th ng-click="orderProp = 'nom'" >Nom</th>
+					                    <th ng-click="orderProp = 'cognoms'">Cognoms</th>
+					                    <th ng-click="orderProp = 'email'">Email</th>
+					                    <th ng-click="orderProp = 'dataNaixement'">Data Naixement</th>
+					                    <th ng-click="orderProp = 'poblacio'">Població</th>
+					                    <th></th>
 					                </tr>
 					            </thead>
-					            <tr ng-repeat="centre in centres | orderBy:orderProp">
-					                <td>{{centre.nom}}</td>
-					                <td>{{centre.direccio}}</td>
+					            <tr ng-repeat="usuari in usuaris | orderBy:orderProp">
+					                <td>{{usuari.nom}}</td>
+					                <td>{{usuari.cognoms}}</td>
+					                <td>{{usuari.email}}</td>
+					                <td>{{usuari.dataNaixement}}</td>
+					                <td>{{usuari.poblacio}}</td>
 					                <td>
-					                	<a href="#/centres-edit/{{centre.id}}" class="btn btn-default btn-xs"><i class="fa fa-pencil fa-fw"></i> Editar</a>
-					                	<a class="btn btn-default btn-xs" ng-click="deleteCentre(centre.id)"><i class="fa fa-trash fa-fw"></i> Eliminar</a>
+					                	<a href="#/usuaris-edit/{{usuari.id}}" class="btn btn-default btn-xs"><i class="fa fa-pencil fa-fw"></i> Editar</a>
 					                </td>
 									
 					            </tr>

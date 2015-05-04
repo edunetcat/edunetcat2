@@ -27,6 +27,33 @@ class PersonesController extends ActiveController {
 		
 		return print_r ( $key ); // Yii::app ()->getRequest ()->getQuery ( 'access-key' );
 	}
+
+	public function behaviors() {
+        $behaviors = parent::behaviors ();
+        $behaviors ['corsFilter'] = [ 
+                'class' => Cors::className (),
+                'cors' => [ 
+                        'Origin' => [ 
+                                '*' 
+                        ],
+                        // 'Access-Control-Request-Method' => ['*'],
+                        'Access-Control-Request-Method' => [ 
+                                'POST',
+                                'GET',
+                                'PUT',
+                                'DELETE',
+                                'HEADER',
+                                'OPTIONS' 
+                        ],
+                        'Access-Control-Request-Headers' => [ 
+                                '*' 
+                        ] 
+                ] 
+        ];
+        // 'Access-Control-Request-Headers' => ['Expiry'],
+        
+        return $behaviors;
+    }
 }
 
 
