@@ -3,8 +3,7 @@
 namespace api\modules\v1\controllers;
 
 use yii\rest\ActiveController;
-use api\modules\v1\models\Persona;
-use Yii;
+use yii\filters\Cors;
 
 /**
  * Centres Controller API
@@ -12,23 +11,20 @@ use Yii;
  * @author Marcos
  */
 class PersonesController extends ActiveController {
-
-	public $modelClass = 'api\modules\v1\models\Persona';
-
-	public function actionLamevainfo($key) {
-		$persona = Persona::findOne ( [ 
-				'authKey' => $key 
-		] );
-		
-		if ($persona != null)
-			return $persona;
-		else
-			return 'error';
-		
-		return print_r ( $key ); // Yii::app ()->getRequest ()->getQuery ( 'access-key' );
-	}
-
-	public function behaviors() {
+    public $modelClass = 'api\modules\v1\models\Persona';
+    public function actionLamevainfo($key) {
+        $persona = Persona::findOne ( [ 
+                'authKey' => $key 
+        ] );
+        
+        if ($persona != null)
+            return $persona;
+        else
+            return 'error';
+        
+        return print_r ( $key ); // Yii::app ()->getRequest ()->getQuery ( 'access-key' );
+    }
+    public function behaviors() {
         $behaviors = parent::behaviors ();
         $behaviors ['corsFilter'] = [ 
                 'class' => Cors::className (),
@@ -36,7 +32,6 @@ class PersonesController extends ActiveController {
                         'Origin' => [ 
                                 '*' 
                         ],
-                        // 'Access-Control-Request-Method' => ['*'],
                         'Access-Control-Request-Method' => [ 
                                 'POST',
                                 'GET',
@@ -50,7 +45,6 @@ class PersonesController extends ActiveController {
                         ] 
                 ] 
         ];
-        // 'Access-Control-Request-Headers' => ['Expiry'],
         
         return $behaviors;
     }

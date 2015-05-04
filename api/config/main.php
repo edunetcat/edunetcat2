@@ -79,7 +79,7 @@ return [
                                 ],
                                 [ 
                                         'class' => 'yii\rest\UrlRule',
-                                        'controller' => 'v1/persona',
+                                        'controller' => 'v1/persones',
                                         'tokens' => [ 
                                                 '{id}' => '<id:\\w+>' 
                                         ] 
