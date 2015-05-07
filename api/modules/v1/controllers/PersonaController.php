@@ -4,14 +4,22 @@ namespace api\modules\v1\controllers;
 
 use yii\rest\ActiveController;
 use yii\filters\Cors;
+use api\modules\v1\models\Persona;
 
 /**
  * Centres Controller API
  *
  * @author Marcos
  */
-class PersonesController extends ActiveController {
+class PersonaController extends ActiveController {
     public $modelClass = 'api\modules\v1\models\Persona';
+    
+    /**
+     * retorna la persona asociada amb la apikey enviada
+     *
+     * @param unknown $key            
+     * @return unknown|string|mixed Persona
+     */
     public function actionLamevainfo($key) {
         $persona = Persona::findOne ( [ 
                 'authKey' => $key 
@@ -32,6 +40,7 @@ class PersonesController extends ActiveController {
                         'Origin' => [ 
                                 '*' 
                         ],
+                        // 'Access-Control-Request-Method' => ['*'],
                         'Access-Control-Request-Method' => [ 
                                 'POST',
                                 'GET',
@@ -45,8 +54,12 @@ class PersonesController extends ActiveController {
                         ] 
                 ] 
         ];
+        // 'Access-Control-Request-Headers' => ['Expiry'],
         
         return $behaviors;
+    }
+    public function actionView($id) {
+        return Persona::findOne ( $id );
     }
 }
 

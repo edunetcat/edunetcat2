@@ -1,2 +1,2 @@
 cls
-codecept run --colors
+codecept run --colors --html

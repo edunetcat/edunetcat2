@@ -3,6 +3,7 @@
 namespace api\modules\v1\controllers;
 
 use yii\rest\ActiveController;
+use yii\filters\Cors;
 
 /**
  * Centres Controller API
@@ -10,36 +11,31 @@ use yii\rest\ActiveController;
  * @author Marcos
  */
 class AssignaturesController extends ActiveController {
-	public $modelClass = 'api\modules\v1\models\Assignatures';
-	
-	/**
-	 * Configuracio yii
-	 * 
-	 * @see \yii\rest\Controller::behaviors()
-	 */
-	public function behaviors() {
-		$behaviors = parent::behaviors ();
-		
-		// configurem la resposta en format json cuan es demani desde web
-		$behaviors ['contentNegotiator'] ['formats'] ['text/html'] = Response::FORMAT_JSON;
-		
-		// daquesta forma necesita la apikey
-		$behaviors ['authenticator'] = [ 
-				'class' => QueryParamAuth::className () 
-		];
-		
-		return $behaviors;
-	}
-	
-	/**
-	 * activen la identificació de sessions
-	 * 
-	 * @see \yii\rest\ActiveController::init()
-	 */
-	public function init() {
-		parent::init ();
-		\Yii::$app->user->enableSession = false;
-	}
+    public $modelClass = 'api\modules\v1\models\Assignatures';
+    public function behaviors() {
+        $behaviors = parent::behaviors ();
+        $behaviors ['corsFilter'] = [ 
+                'class' => Cors::className (),
+                'cors' => [ 
+                        'Origin' => [ 
+                                '*' 
+                        ],
+                        'Access-Control-Request-Method' => [ 
+                                'POST',
+                                'GET',
+                                'PUT',
+                                'DELETE',
+                                'HEADER',
+                                'OPTIONS' 
+                        ],
+                        'Access-Control-Request-Headers' => [ 
+                                '*' 
+                        ] 
+                ] 
+        ];
+        
+        return $behaviors;
+    }
 }
 
 
