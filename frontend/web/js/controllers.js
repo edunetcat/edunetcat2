@@ -150,7 +150,7 @@ panellAppControllers.controller('UsuarisAddCtrl', ['$scope', '$location', 'Centr
 		$scope.centres = CentresFactory.query();
 
 		// peticio al factory de tipus d'usuari
-		$scope.tipusUsuari = TipusUsuarisFactory.query();
+		$scope.idTipusUsuari = TipusUsuarisFactory.query();
 
 
 	}]);

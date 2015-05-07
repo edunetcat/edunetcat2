@@ -13,7 +13,7 @@
 	        <!-- /.panel -->
 	        <div class="panel panel-default">
 	            <div class="panel-heading">
-	                <i class="fa fa-bar-chart-o fa-fw"></i> Missatges nous:
+	                <i class="fa fa-bar-chart-o fa-fw"></i> Llistat d'usuaris
 	            </div>
 	            <!-- /.panel-heading -->
 	            <div class="panel-body">
@@ -21,11 +21,15 @@
 	                    <div class="col-lg-12">
 
 
-	                    	<label for="ordreCentres">Ordre</label>
-	                        <select name="ordreCentres" ng-model="orderProp">
-					          <option value="name">Per nom del centre</option>
-					          <option value="direccio">Per l'adreça</option>
-					        </select>
+	                    	<label>Búsqueda: <input ng-model="buscarText"></label>
+	                    	<label for="ordreCentres">Ordre
+		                        <select name="ordreCentres" ng-model="orderProp">
+						          <option value="nom">Nom</option>
+						          <option value="cognom">Cognom</option>
+						          <option value="direccio">Adreça</option>
+						          <option value="dataNaixement">Data Naixement</option>
+						        </select>
+					        </label>
 
 					        <table class="table table-striped col-lg-12">
 					            <thead>
@@ -38,7 +42,7 @@
 					                    <th></th>
 					                </tr>
 					            </thead>
-					            <tr ng-repeat="usuari in usuaris | orderBy:orderProp">
+					            <tr ng-repeat="usuari in usuaris | orderBy:orderProp | filter:buscarText">
 					                <td>{{usuari.nom}}</td>
 					                <td>{{usuari.cognoms}}</td>
 					                <td>{{usuari.email}}</td>
@@ -75,7 +79,7 @@
 	            <!-- /.panel-heading -->
 	            <div class="panel-body">
 	                
-	                <a href="#/usuaris-add" class="btn btn-default btn-block">Afegir centre nou</a>
+	                <a href="#/usuaris-add" class="btn btn-default btn-block">Crear nou alumne</a>
 
 	                
 	                <!-- /.list-group -->

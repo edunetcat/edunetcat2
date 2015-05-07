@@ -29,7 +29,7 @@ class Persona extends ActiveRecord {
 						'nom', 
 						'cognoms', 
 						'password', 
-						'idTipusUsusari', 
+						'idTipusUsuari', 
 						'idCentre'
 					],
 						'required' 
