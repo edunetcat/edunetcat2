@@ -3,7 +3,8 @@
 # suite for unit (internal) tests.
 class_name: UnitTester
 modules:
-    enabled: [PhpBrowser, REST, Asserts, UnitHelper, Yii2, Db]
+#enabled: [PhpBrowser, REST, Asserts, UnitHelper, Yii2, Db]
+    enabled: [PhpBrowser, REST, Asserts, UnitHelper, Yii2]
     config:
         Db:
             dsn: 'mysql:host=localhost;dbname=edunetcat'

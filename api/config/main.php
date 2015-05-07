@@ -42,6 +42,7 @@ return [
                         'enableStrictParsing' => true,
                         'showScriptName' => false,
                         'rules' => [ 
+                                
                                 [ 
                                         'class' => 'yii\rest\UrlRule',
                                         'controller' => 'v1/centres',
@@ -77,17 +78,12 @@ return [
                                                 '{id}' => '<id:\\w+>' 
                                         ] 
                                 ],
-                                [ 
-                                        'class' => 'yii\rest\UrlRule',
-                                        'controller' => 'v1/persones',
-                                        'tokens' => [ 
-                                                '{id}' => '<id:\\w+>' 
-                                        ] 
-                                ],
+                                'v1/persona' => 'v1/persona',
+                                'v1/persona/<id>' => 'v1/persona/view',
                                 'v1/tipususuari' => 'v1/tipususuari',
                                 'v1/tipususuari/<id>' => 'v1/tipususuari',
                                 'v1/login/<user>/<password>' => 'v1/login/login',
-                                'v1/lamevainfo/<key>' => '/v1/persones/lamevainfo' 
+                                'v1/lamevainfo/<key>' => '/v1/persona/lamevainfo' 
                         ] 
                 ] 
         ],
