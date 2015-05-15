@@ -12,18 +12,24 @@ use yii\filters\auth\HttpBearerAuth;
 use yii\filters\auth\QueryParamAuth;
 
 class LoginController extends ActiveController {
-
-	public $modelClass = 'app\models\Persona';
-	
-	public function actionLogin($user, $password) {
-		$persona = Persona::findOne ( [ 
-				'email' => $user,
-				'password' => hash ( 'sha256', $password ) 
-		] );
-		
-		if ($persona != null)
-			return $persona->authKey;
-		else
-			return 'error';
-	}
+    public $modelClass = 'app\models\Persona';
+    /**
+     *
+     * @param unknown $user
+     *            usuari per loguejar-se
+     * @param unknown $password
+     *            contrasenya
+     * @return string la api key
+     */
+    public function actionLogin($user, $password) {
+        $persona = Persona::findOne ( [ 
+                'email' => $user,
+                'password' => hash ( 'sha256', $password ) 
+        ] );
+        
+        if ($persona != null)
+            return $persona->authKey;
+        else
+            return 'error';
+    }
 }
