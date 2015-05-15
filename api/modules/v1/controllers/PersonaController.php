@@ -58,6 +58,13 @@ class PersonaController extends ActiveController {
         
         return $behaviors;
     }
+    /**
+     * mostra la persona indicada
+     * 
+     * @param unknown $id
+     *            id de la persona que es vol buscar
+     * @return \yii\db\static
+     */
     public function actionView($id) {
         return Persona::findOne ( $id );
     }
