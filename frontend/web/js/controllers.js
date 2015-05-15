@@ -187,3 +187,15 @@ panellAppControllers.controller('UsuarisEditCtrl', ['$scope', '$http', '$routePa
 		$scope.centre = UsuarisFactory.show({id: $routeParams.id});		
 
 	}]);
+
+
+
+/**
+*   Controller que gestiona la plana /missatges
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('MissatgesListCtrl', ['$scope', '$http', 
+	function($scope, $http) {
+		
+	}]);

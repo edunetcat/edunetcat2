@@ -1,0 +1,206 @@
+Array
+(
+    [0] => Array
+        (
+            [line] => 12
+            [file] => api\modules\v1\Module.php
+            [message] => No docblock for element '$controllerNamespace'
+        )
+
+    [1] => Array
+        (
+            [line] => 12
+            [file] => api\modules\v1\Module.php
+            [message] => No short description for element '$controllerNamespace'
+        )
+
+    [2] => Array
+        (
+            [line] => 14
+            [file] => api\modules\v1\Module.php
+            [message] => No docblock for element 'init'
+        )
+
+    [3] => Array
+        (
+            [line] => 14
+            [file] => api\modules\v1\controllers\AssignaturesController.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [4] => Array
+        (
+            [line] => 14
+            [file] => api\modules\v1\controllers\AssignaturesController.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [5] => Array
+        (
+            [line] => 15
+            [file] => api\modules\v1\controllers\AssignaturesController.php
+            [message] => No docblock for element 'behaviors'
+        )
+
+    [6] => Array
+        (
+            [line] => 15
+            [file] => api\modules\v1\controllers\CentresController.php
+            [message] => No docblock for element 'behaviors'
+        )
+
+    [7] => Array
+        (
+            [line] => 30
+            [file] => api\modules\v1\controllers\CentresController.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [8] => Array
+        (
+            [line] => 30
+            [file] => api\modules\v1\controllers\CentresController.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [9] => Array
+        (
+            [line] => 14
+            [file] => api\modules\v1\controllers\CursosController.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [10] => Array
+        (
+            [line] => 14
+            [file] => api\modules\v1\controllers\CursosController.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [11] => Array
+        (
+            [line] => 15
+            [file] => api\modules\v1\controllers\CursosController.php
+            [message] => No docblock for element 'behaviors'
+        )
+
+    [12] => Array
+        (
+            [line] => 14
+            [file] => api\modules\v1\controllers\LoginController.php
+            [message] => No docblock for element 'api\modules\v1\controllers\LoginController'
+        )
+
+    [13] => Array
+        (
+            [line] => 16
+            [file] => api\modules\v1\controllers\LoginController.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [14] => Array
+        (
+            [line] => 16
+            [file] => api\modules\v1\controllers\LoginController.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [15] => Array
+        (
+            [line] => 18
+            [file] => api\modules\v1\controllers\LoginController.php
+            [message] => No docblock for element 'actionLogin'
+        )
+
+    [16] => Array
+        (
+            [line] => 14
+            [file] => api\modules\v1\controllers\MissatgesController.php
+            [message] => No docblock for element 'behaviors'
+        )
+
+    [17] => Array
+        (
+            [line] => 42
+            [file] => api\modules\v1\controllers\MissatgesController.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [18] => Array
+        (
+            [line] => 42
+            [file] => api\modules\v1\controllers\MissatgesController.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [19] => Array
+        (
+            [line] => 15
+            [file] => api\modules\v1\controllers\PersonaController.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [20] => Array
+        (
+            [line] => 15
+            [file] => api\modules\v1\controllers\PersonaController.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [21] => Array
+        (
+            [line] => 35
+            [file] => api\modules\v1\controllers\PersonaController.php
+            [message] => No docblock for element 'behaviors'
+        )
+
+    [22] => Array
+        (
+            [line] => 61
+            [file] => api\modules\v1\controllers\PersonaController.php
+            [message] => No docblock for element 'actionView'
+        )
+
+    [23] => Array
+        (
+            [line] => 14
+            [file] => api\modules\v1\controllers\TipusUsuariController.php
+            [message] => No docblock for element 'behaviors'
+        )
+
+    [24] => Array
+        (
+            [line] => 40
+            [file] => api\modules\v1\controllers\TipusUsuariController.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [25] => Array
+        (
+            [line] => 40
+            [file] => api\modules\v1\controllers\TipusUsuariController.php
+            [message] => No short description for element '$modelClass'
+        )
+
+    [26] => Array
+        (
+            [line] => 15
+            [file] => api\modules\v1\controllers\UsuarisController.php
+            [message] => No docblock for element 'behaviors'
+        )
+
+    [27] => Array
+        (
+            [line] => 30
+            [file] => api\modules\v1\controllers\UsuarisController.php
+            [message] => No docblock for element '$modelClass'
+        )
+
+    [28] => Array
+        (
+            [line] => 30
+            [file] => api\modules\v1\controllers\UsuarisController.php
+            [message] => No short description for element '$modelClass'
+        )
+
+)

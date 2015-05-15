@@ -59,6 +59,11 @@ panellApp.config(['$routeProvider', '$httpProvider',
             templateUrl: 'ng-views/usuaris-edit.html',
             controller: 'UsuarisEditCtrl'
         })
+        // missatges
+        .when('/missatges', {
+            templateUrl: 'ng-views/missatges.html',
+            controller: 'MissatgesListCtrl'
+        })
 
         .when('/logout', {
             templateUrl: 'ng-views/panell.html',

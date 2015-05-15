@@ -25,7 +25,7 @@ AppAsset::register($this);
 
     <!-- Custom CSS -->
     <link href="css/panell.css" rel="stylesheet">
-
+    
     <!-- Custom Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -53,9 +53,9 @@ AppAsset::register($this);
             
 
             <ul class="nav navbar-top-links navbar-right">
-                <li>
+                <!--<li>
                     <a>AuthKey: <?php $session = Yii::$app->session; echo $session['authKey'] ?></a>
-                </li>
+                </li> -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
                         <i class="fa fa-envelope fa-fw"></i> Missatges <i class="fa fa-caret-down"></i>
@@ -143,7 +143,7 @@ AppAsset::register($this);
                             <a href=""><i class="fa fa-sign-in fa-fw"></i> Tràmits</a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-envelope-o fa-fw"></i> Missatges</a>
+                            <a href="/#/missatges"><i class="fa fa-envelope-o fa-fw"></i> Missatges</a>
                         </li>
                         <li>
                             <a href=""><i class="fa fa-calendar-o fa-fw"></i> Calendari</a>
