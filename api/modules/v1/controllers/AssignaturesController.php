@@ -6,9 +6,11 @@ use yii\rest\ActiveController;
 use yii\filters\Cors;
 
 /**
- * Centres Controller API
  *
- * @author Marcos
+ * Classe controladora d'assignatures
+ *
+ *
+ * @author Marcos Torrent
  */
 class AssignaturesController extends ActiveController {
     public $modelClass = 'api\modules\v1\models\Assignatures';

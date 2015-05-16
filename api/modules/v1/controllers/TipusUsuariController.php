@@ -6,7 +6,9 @@ use yii\rest\ActiveController;
 use yii\filters\Cors;
 
 /**
- * TipusUsuari Controller API
+ *
+ * Classe controladora de tipus de usuaris
+ *
  *
  * @author Biel
  */

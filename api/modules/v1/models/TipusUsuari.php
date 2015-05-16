@@ -5,7 +5,9 @@ namespace api\modules\v1\models;
 use \yii\db\ActiveRecord;
 
 /**
- * Model tipususuari
+ *
+ * Classe model de tipus de usuaris
+ *
  *
  * @author Biel
  */

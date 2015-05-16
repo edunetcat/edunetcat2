@@ -6,9 +6,11 @@ use yii\rest\ActiveController;
 use yii\filters\Cors;
 
 /**
- * Missatges Controller API
  *
- * @author Marcos
+ * Classe controladora de missatges
+ *
+ *
+ * @author Marcos Torrent
  */
 class MissatgesController extends ActiveController {
     public function behaviors() {
@@ -34,8 +36,6 @@ class MissatgesController extends ActiveController {
                 ] 
         ];
         // 'Access-Control-Request-Headers' => ['Expiry'],
-        
-        
         
         return $behaviors;
     }

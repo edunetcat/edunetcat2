@@ -6,9 +6,11 @@ use yii\rest\ActiveController;
 use yii\filters\Cors;
 
 /**
- * Curs Controller API
  *
- * @author Marcos
+ * Classe controladora de cursos
+ *
+ *
+ * @author Marcos Torrent
  */
 class CursosController extends ActiveController {
     public $modelClass = 'api\modules\v1\models\Curs'; // encara que la clase sigui CursosController, aqui hem de aclarar que el model es Curs

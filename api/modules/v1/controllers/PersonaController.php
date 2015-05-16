@@ -7,9 +7,11 @@ use yii\filters\Cors;
 use api\modules\v1\models\Persona;
 
 /**
- * Centres Controller API
  *
- * @author Marcos
+ * Classe controladora de persones
+ *
+ *
+ * @author Marcos Torrent
  */
 class PersonaController extends ActiveController {
     public $modelClass = 'api\modules\v1\models\Persona';
@@ -60,7 +62,7 @@ class PersonaController extends ActiveController {
     }
     /**
      * mostra la persona indicada
-     * 
+     *
      * @param unknown $id
      *            id de la persona que es vol buscar
      * @return \yii\db\static

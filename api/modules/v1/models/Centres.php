@@ -5,9 +5,11 @@ namespace api\modules\v1\models;
 use \yii\db\ActiveRecord;
 
 /**
- * Model centres
  *
- * @author Marcos
+ * Classe model de centres
+ *
+ *
+ * @author Marcos Torrent
  */
 class Centres extends ActiveRecord {
     /**
@@ -36,7 +38,6 @@ class Centres extends ActiveRecord {
                         ],
                         'default' 
                 ] 
-        ]
-        ;
+        ];
     }
 }

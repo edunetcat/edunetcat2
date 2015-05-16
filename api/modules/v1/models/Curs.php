@@ -5,9 +5,11 @@ namespace api\modules\v1\models;
 use \yii\db\ActiveRecord;
 
 /**
- * Model cursos
  *
- * @author Marcos
+ * Classe model de cursos
+ *
+ *
+ * @author Marcos Torrent
  */
 class curs extends ActiveRecord {
     /**

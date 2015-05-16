@@ -5,9 +5,11 @@ namespace api\modules\v1\models;
 use \yii\db\ActiveRecord;
 
 /**
- * Model centres
  *
- * @author Marcos
+ * Classe model de missatges
+ *
+ *
+ * @author Marcos Torrent
  */
 class Missatges extends ActiveRecord {
     /**
