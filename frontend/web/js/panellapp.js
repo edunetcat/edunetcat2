@@ -64,6 +64,10 @@ panellApp.config(['$routeProvider', '$httpProvider',
             templateUrl: 'ng-views/missatges.html',
             controller: 'MissatgesListCtrl'
         })
+        .when('/missatges-new', {
+            templateUrl: 'ng-views/missatges-new.html',
+            controller: 'MissatgesListCtrl'
+        })
 
         .when('/logout', {
             templateUrl: 'ng-views/panell.html',

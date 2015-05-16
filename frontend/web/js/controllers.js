@@ -199,3 +199,14 @@ panellAppControllers.controller('MissatgesListCtrl', ['$scope', '$http',
 	function($scope, $http) {
 		
 	}]);
+
+
+/**
+*   Controller que gestiona la plana /missatges-new
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('MissatgesListCtrl', ['$scope', '$http', 
+	function($scope, $http) {
+		
+	}]);
