@@ -19,6 +19,10 @@ use yii\filters\auth\QueryParamAuth;
  * @author Marcos Torrent
  */
 class LoginController extends ActiveController {
+    /**
+     *
+     * @var String nom de la clase model relacionada
+     */
     public $modelClass = 'app\models\Persona';
     /**
      *

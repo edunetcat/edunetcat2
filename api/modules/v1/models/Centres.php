@@ -7,12 +7,13 @@ use \yii\db\ActiveRecord;
 /**
  *
  * Classe model de centres
- *
+ * Cadascun dels centres que estan funcionant amb edunet
  *
  * @author Marcos Torrent
  */
 class Centres extends ActiveRecord {
     /**
+     * Especifica el nom de la taula que es farà servir per al model
      * @inheritdoc
      */
     public static function tableName() {

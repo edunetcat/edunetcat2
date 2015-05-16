@@ -13,6 +13,11 @@ use yii\filters\Cors;
  * @author Biel
  */
 class TipususuariController extends ActiveController {
+    /**
+     *
+     * @var String nom de la clase model relacionada
+     */
+    public $modelClass = 'api\modules\v1\models\Tipususuari';
     public function behaviors() {
         $behaviors = parent::behaviors ();
         $behaviors ['corsFilter'] = [ 
@@ -39,7 +44,6 @@ class TipususuariController extends ActiveController {
         
         return $behaviors;
     }
-    public $modelClass = 'api\modules\v1\models\Tipususuari';
 }
 
 

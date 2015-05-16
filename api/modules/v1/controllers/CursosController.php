@@ -8,12 +8,16 @@ use yii\filters\Cors;
 /**
  *
  * Classe controladora de cursos
- *
+ * Defineix les accions que es poden dur a terme a les dades dels centres
  *
  * @author Marcos Torrent
  */
 class CursosController extends ActiveController {
-    public $modelClass = 'api\modules\v1\models\Curs'; // encara que la clase sigui CursosController, aqui hem de aclarar que el model es Curs
+    /**
+     *
+     * @var String nom de la clase model relacionada (encara que la clase sigui CursosController, aqui hem de aclarar que el model es Curs)
+     */
+    public $modelClass = 'api\modules\v1\models\Curs';
     public function behaviors() {
         $behaviors = parent::behaviors ();
         $behaviors ['corsFilter'] = [ 
@@ -22,7 +26,7 @@ class CursosController extends ActiveController {
                         'Origin' => [ 
                                 '*' 
                         ],
-                        // 'Access-Control-Request-Method' => ['*'],
+                        
                         'Access-Control-Request-Method' => [ 
                                 'POST',
                                 'GET',
@@ -36,7 +40,6 @@ class CursosController extends ActiveController {
                         ] 
                 ] 
         ];
-        // 'Access-Control-Request-Headers' => ['Expiry'],
         
         return $behaviors;
     }
