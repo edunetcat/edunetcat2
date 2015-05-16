@@ -6,11 +6,18 @@ use yii\rest\ActiveController;
 use yii\filters\Cors;
 
 /**
- * Missatges Controller API
  *
- * @author Marcos
+ * Classe controladora de missatges
+ * Defineix les accions que es poden dur a terme amb els missatges
+ *
+ * @author Marcos Torrent
  */
 class MissatgesController extends ActiveController {
+    /**
+     *
+     * @var String nom de la clase model relacionada
+     */
+    public $modelClass = 'api\modules\v1\models\Missatges';
     public function behaviors() {
         $behaviors = parent::behaviors ();
         $behaviors ['corsFilter'] = [ 
@@ -35,11 +42,8 @@ class MissatgesController extends ActiveController {
         ];
         // 'Access-Control-Request-Headers' => ['Expiry'],
         
-        
-        
         return $behaviors;
     }
-    public $modelClass = 'api\modules\v1\models\Missatges';
 }
 
 

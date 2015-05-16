@@ -5,12 +5,15 @@ namespace api\modules\v1\models;
 use \yii\db\ActiveRecord;
 
 /**
- * Model centres
  *
- * @author Marcos
+ * Classe model de missatges
+ * Missatges personals que es poden enviar als alumnes
+ *
+ * @author Marcos Torrent
  */
 class Missatges extends ActiveRecord {
     /**
+     * Especifica el nom de la taula que es farà servir per al model
      * @inheritdoc
      */
     public static function tableName() {

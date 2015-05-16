@@ -11,7 +11,18 @@ use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\HttpBearerAuth;
 use yii\filters\auth\QueryParamAuth;
 
+/**
+ *
+ * Classe controladora de login
+ * Clase login, per poder loguejar els usuaris a la web
+ *
+ * @author Marcos Torrent
+ */
 class LoginController extends ActiveController {
+    /**
+     *
+     * @var String nom de la clase model relacionada
+     */
     public $modelClass = 'app\models\Persona';
     /**
      *

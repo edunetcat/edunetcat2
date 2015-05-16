@@ -6,11 +6,17 @@ use yii\rest\ActiveController;
 use yii\filters\Cors;
 
 /**
- * Centres Controller API
  *
- * @author Marcos
+ * Classe controladora d'assignatures
+ * Defineix les accions que es poden dur a terme a les dades de les assignatures
+ *
+ * @author Marcos Torrent
  */
 class AssignaturesController extends ActiveController {
+    /**
+     *
+     * @var String nom de la clase model relacionada
+     */
     public $modelClass = 'api\modules\v1\models\Assignatures';
     public function behaviors() {
         $behaviors = parent::behaviors ();

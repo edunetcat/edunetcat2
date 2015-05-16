@@ -5,12 +5,15 @@ namespace api\modules\v1\models;
 use \yii\db\ActiveRecord;
 
 /**
- * Model centres
  *
- * @author Marcos
+ * Classe model de centres
+ * Cadascun dels centres que estan funcionant amb edunet
+ *
+ * @author Marcos Torrent
  */
 class Centres extends ActiveRecord {
     /**
+     * Especifica el nom de la taula que es farà servir per al model
      * @inheritdoc
      */
     public static function tableName() {
@@ -36,7 +39,6 @@ class Centres extends ActiveRecord {
                         ],
                         'default' 
                 ] 
-        ]
-        ;
+        ];
     }
 }
