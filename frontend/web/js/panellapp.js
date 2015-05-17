@@ -7,11 +7,12 @@
 *   @author: Biel <bielbcm@gmail.com>
 * 
 **/
-
 var panellApp = angular.module('panellApp', [
     // angular modules
     'ngRoute', 
     'ngResource', 
+    'mwl.calendar', 
+    'ui.bootstrap',
     // controllers
     'panellAppControllers', 
     //services
@@ -67,6 +68,10 @@ panellApp.config(['$routeProvider', '$httpProvider',
         .when('/missatges-new', {
             templateUrl: 'ng-views/missatges-new.html',
             controller: 'MissatgesListCtrl'
+        })
+        .when('/calendari', {
+            templateUrl: 'ng-views/calendari.html',
+            controller: 'CalendariCtrl'
         })
 
         .when('/logout', {

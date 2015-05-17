@@ -28,6 +28,7 @@ AppAsset::register($this);
     
     <!-- Custom Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//mattlewis92.github.io/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet" type="text/css">
 
 </head>
 <body ng-app="panellApp">
@@ -146,7 +147,7 @@ AppAsset::register($this);
                             <a href="/#/missatges"><i class="fa fa-envelope-o fa-fw"></i> Missatges</a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-calendar-o fa-fw"></i> Calendari</a>
+                            <a href="/#/calendari"><i class="fa fa-calendar-o fa-fw"></i> Calendari</a>
                         </li>
                         <li>
                             <a href=""><i class="fa fa-bar-chart-o fa-fw"></i> Expedient acadèmic</a>
@@ -192,6 +193,12 @@ AppAsset::register($this);
     <script src="/js/vendor/angular.min.js"></script>
     <script src="/js/vendor/angular-route.min.js"></script>
     <script src="/js/vendor/angular-resource.min.js"></script>
+
+    <script src="/js/vendor/ui-bootstrap-0.13.0.min.js"></script>
+    <script src="/js/vendor/moment.min.js"></script>
+    <script src="/js/vendor/moment-ca.js"></script>
+    <script src="/js/vendor/ui-bootstrap-tpls.min.js"></script>
+    <script src="/js/vendor/angular-bootstrap-calendar-tpls.min.js"></script>
 
     <!-- Custom JavaScript -->
     <script src="/js/panellapp.js"></script>

@@ -189,6 +189,76 @@ panellAppControllers.controller('UsuarisEditCtrl', ['$scope', '$http', '$routePa
 	}]);
 
 
+/**
+*   Controller que gestiona la plana /missatges
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('CalendariCtrl', ['$scope', '$http', '$modal',
+	function($scope, $http, $modal) {
+
+		moment.locale('ca', {
+		  week : {
+		    dow : 1 // Monday is the first day of the week
+		  }
+		});
+
+		//These variables MUST be set as a minimum for the calendar to work
+	    $scope.calendarView = 'month';
+	    $scope.calendarDay = new Date();
+	    $scope.events = [
+	      {
+	        title: 'Semana d\'examens',
+	        type: 'warning',
+	        startsAt: moment().startOf('week').subtract(2, 'days').add(6, 'hours').toDate(),
+	        endsAt: moment().startOf('week').add(5, 'days').add(7, 'hours').toDate()
+	      },
+	      {
+	        title: 'Periode matriculació 2015-2016',
+	        type: 'info',
+	        startsAt: moment().subtract(1, 'day').toDate(),
+	        endsAt: moment().add(5, 'days').toDate()
+	      },
+	      {
+	        title: 'Fi de curs',
+	        type: 'important',
+	        startsAt: moment().startOf('day').add(5, 'hours').toDate(),
+	        endsAt: moment().startOf('day').add(19, 'hours').toDate()
+	      }
+	    ];
+
+	    
+
+	    function showModal(action, event) {
+	      $modal.open({
+	        templateUrl: 'modalContent.html',
+	        controller: function($scope, $modalInstance) {
+	          $scope.$modalInstance = $modalInstance;
+	          $scope.action = action;
+	          $scope.event = event;
+	        }
+	      });
+	    }
+
+	    $scope.eventClicked = function(event) {
+	      showModal('Clicked', event);
+	    };
+
+	    $scope.eventEdited = function(event) {
+	      showModal('Edited', event);
+	    };
+
+	    $scope.eventDeleted = function(event) {
+	      showModal('Deleted', event);
+	    };
+
+	    $scope.toggle = function($event, field, event) {
+	      $event.preventDefault();
+	      $event.stopPropagation();
+	      event[field] = !event[field];
+	    };
+	}]);
+
 
 /**
 *   Controller que gestiona la plana /missatges

@@ -1,0 +1,110 @@
+
+<style>
+	/* estils específics per aquesta plana */
+	.cal-row-head  { text-transform: capitalize; }
+</style>
+
+<div ng-controller="CentresListCtrl">
+
+	<div class="row">
+	    <div class="col-lg-12">
+	        <h1 class="page-header">Calendari</h1>
+	    </div>
+	    <!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+	<div class="row">
+	    <div class="col-lg-12">
+	        <!-- /.panel -->
+	        <div class="panel panel-default">
+	            <div class="panel-heading">
+	                Calendari:
+	            </div>
+	            <!-- /.panel-heading -->
+	            <div class="panel-body">           	
+
+					<div class="row">
+
+			            <div class="col-md-4 text-center">
+			              <div class="btn-group">
+
+			                <button class="btn btn-primary ng-isolate-scope" mwl-date-modifier="" date="calendarDay" decrement="calendarView">
+			                  Anterior
+			                </button>
+			                <button class="btn btn-default ng-isolate-scope" mwl-date-modifier="" date="calendarDay" set-to-today="">
+			                  Avui
+			                </button>
+			                <button class="btn btn-primary ng-isolate-scope" mwl-date-modifier="" date="calendarDay" increment="calendarView">
+			                  Següent
+			                </button>
+			              </div>
+			            </div>
+
+			            
+
+
+						<div class="col-md-4 text-center">
+				          	<h2 class="text-center" style="margin-top: 0px; text-transform: capitalize;">{{ calendarTitle }}</h2>
+						</div>
+
+
+			            <div class="col-md-4 text-center">
+			              <div class="btn-group">
+			                <label class="btn btn-primary ng-pristine ng-untouched ng-valid" ng-model="calendarView" btn-radio="'year'">Any</label>
+			                <label class="btn btn-primary ng-pristine ng-untouched ng-valid active" ng-model="calendarView" btn-radio="'month'">Mes</label>
+			                <label class="btn btn-primary ng-pristine ng-untouched ng-valid" ng-model="calendarView" btn-radio="'week'">Semana</label>
+			                <label class="btn btn-primary ng-pristine ng-untouched ng-valid" ng-model="calendarView" btn-radio="'day'">Dia</label>
+			              </div>
+			            </div>
+
+		          	</div>
+		          	<hr>
+	                <div class="row">
+
+						<div class="col-lg-12">
+					        
+								
+							<mwl-calendar
+							    view="calendarView"
+							    current-day="calendarDay"
+							    events="events"
+							    view-title="calendarTitle"
+							    on-event-click="eventClicked(calendarEvent)"
+							    edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'"
+							    delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'"
+							    on-edit-event-click="eventEdited(calendarEvent)"
+							    on-delete-event-click="eventDeleted(calendarEvent)"
+							    auto-open="true">
+							</mwl-calendar>
+
+
+
+
+						</div>
+					</div> <!--  row -->
+
+	            </div>
+	            <!-- /.panel-body -->
+	        </div>
+	        <!-- /.panel -->                    
+	    </div>
+	    <!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+</div>	
+
+
+<script type="text/ng-template" id="modalContent.html">
+	<div class="modal-header">
+		<h3 class="modal-title">Event action occurred!</h3>
+	</div>
+	<div class="modal-body">
+		<p>Action: <pre>{{ action }}</pre></p>
+		<p>Event: <pre>{{ event | json }}</pre></p>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" ng-click="$modalInstance.close()">OK</button>
+	</div>
+</script>
