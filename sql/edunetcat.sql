@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.23, for Win64 (x86_64)
 --
--- Host: localhost    Database: edunetcat
+-- Host: 127.0.0.1    Database: edunetcat
 -- ------------------------------------------------------
--- Server version	5.6.17
+-- Server version	5.6.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -85,8 +85,8 @@ CREATE TABLE `avaluacio` (
   PRIMARY KEY (`id`),
   KEY `alumneFK_idx` (`idAlumne`),
   KEY `FKItems_idx` (`idItems`),
-  CONSTRAINT `alumneFK` FOREIGN KEY (`idAlumne`) REFERENCES `persona` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FKItems` FOREIGN KEY (`idItems`) REFERENCES `itemsavaluació` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `FKItems` FOREIGN KEY (`idItems`) REFERENCES `itemsavaluació` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `alumneFK` FOREIGN KEY (`idAlumne`) REFERENCES `persona` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -113,7 +113,7 @@ CREATE TABLE `centres` (
   `telefon` varchar(410) DEFAULT NULL,
   `poblacio` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +122,7 @@ CREATE TABLE `centres` (
 
 LOCK TABLES `centres` WRITE;
 /*!40000 ALTER TABLE `centres` DISABLE KEYS */;
-INSERT INTO `centres` VALUES (1,'centre01','C/ Centre01','93721111111','Barcelona');
+INSERT INTO `centres` VALUES (1,'Escola Bresol la Tortuga','C/ principal','93721111111','Barcelona'),(3,'IES La Romantica','C/ Centre01','93721111111','Barcelona'),(4,'CEIP La tortuga','C/ carrer de d\'alt','1231233','ASDFSDFD'),(5,'Centre educatiu de FP','C/ de l\'escola','93721111111','Barcelona'),(6,'Updated','C/ Centre01','93721111111','Barcelona'),(7,'IES del vallés','C/ solidari','1231233','ASDFSDFD'),(8,'CEIP La magrana verda','C/ escolarització','1231233','ASDFSDFD'),(9,'CEIP Joan Vila','Av de l\'est','1231233','ASDFSDFD'),(10,'IES Jaume Viladoms','C/ de l\'estació','1231233','Sabadell'),(11,'Updated','dfasdfasdf','asdfasdf','asdfasdf'),(12,'Nou Centre','C/ La Massana','98794321321','SZDFSAFD'),(13,'Centre demostracio','C/ doctor moragas 18','93123456789','Barcelona');
 /*!40000 ALTER TABLE `centres` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,8 +141,8 @@ CREATE TABLE `correus` (
   PRIMARY KEY (`idMissatge`,`IdReceptor`),
   KEY `FKEmissor_idx` (`IdEmissor`),
   KEY `FKReceptor_idx` (`IdReceptor`),
-  CONSTRAINT `FKMissatge` FOREIGN KEY (`idMissatge`) REFERENCES `missatges` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FKEmissor` FOREIGN KEY (`IdEmissor`) REFERENCES `persona` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FKMissatge` FOREIGN KEY (`idMissatge`) REFERENCES `missatges` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FKReceptor` FOREIGN KEY (`IdReceptor`) REFERENCES `persona` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -232,8 +232,8 @@ CREATE TABLE `historialassignatures` (
   PRIMARY KEY (`any`,`idAssignatura`,`idCentre`,`semestre`),
   KEY `assignaturaProfessor_idx` (`idAssignatura`),
   KEY `rofessorAssignatura` (`idProfessor`),
-  CONSTRAINT `rofessorAssignatura` FOREIGN KEY (`idProfessor`) REFERENCES `persona` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `assignaturaProfessor` FOREIGN KEY (`idAssignatura`) REFERENCES `assignaturescentre` (`idAssignatura`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `assignaturaProfessor` FOREIGN KEY (`idAssignatura`) REFERENCES `assignaturescentre` (`idAssignatura`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `rofessorAssignatura` FOREIGN KEY (`idProfessor`) REFERENCES `persona` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -315,17 +315,17 @@ CREATE TABLE `persona` (
   `cognoms` varchar(255) DEFAULT NULL,
   `dataNaixement` date DEFAULT NULL,
   `direccio` varchar(255) DEFAULT NULL,
-  `població` varchar(255) DEFAULT NULL,
+  `poblacio` varchar(255) DEFAULT NULL,
   `codiPostal` varchar(5) DEFAULT NULL,
   `password` varchar(64) DEFAULT NULL,
   `idTipusUsuari` int(11) NOT NULL,
-  `idCEntre` int(11) DEFAULT NULL,
+  `idCentre` int(11) DEFAULT NULL,
   `nivell` int(11) DEFAULT NULL,
   `authKey` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `TipusUsuari_idx` (`idTipusUsuari`),
-  KEY `centre_idx` (`idCEntre`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+  KEY `centre_idx` (`idCentre`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -334,7 +334,7 @@ CREATE TABLE `persona` (
 
 LOCK TABLES `persona` WRITE;
 /*!40000 ALTER TABLE `persona` DISABLE KEYS */;
-INSERT INTO `persona` VALUES (1,'mail1@gmail.com','11111111A','Manuel','Acognom Acognom','0000-00-00','Carrer A 1','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',1,1,1,'GJQUMM3KA24UX5SA6Y4NMNXVXRR4G8CN'),(2,'mail2@gmail.com','22222222B','Marcos','Bcognom Bcognom','0000-00-00','Carrer B 2','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',1,1,1,'TNBFC2A4SAFB6ZUB9MLVCFY59VVD44GM'),(3,'mail3@gmail.com','33333333C','Biel','Ccognom Ccognom','0000-00-00','Carrer C 3','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',1,1,1,'97RKQLL3GDE3WTFLC2FZ9NA4N9SMA4B9'),(4,'mail4@gmail.com','44444444D','Tomàs','Dcognom Dcognom','0000-00-00','Carrer D 4','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',1,1,1,'QJ3XC5AQDPVSZ3FJVLY6334MRSP65G5K'),(5,'mail5@gmail.com','55555555E','Emili','Ecognom Ecognom','0000-00-00','Carrer E 5','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',2,1,3,'NWJJJ83GQ8ELJXWHJLYSK6CSCRCCVG39'),(6,'mail6@gmail.com','66666666F','Francesc','Fcognom Fcognom','0000-00-00','Carrer F 6','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',2,1,3,'RDYUV2WVR8JCFM4P8MQFF2TZ4SHUWCDD'),(7,'mail7@gmail.com','77777777G','Guillem','Gcognom Gcognom','0000-00-00','Carrer G 7','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',2,1,3,'HN8NDQS7RGGJYDQRDQLFZASYHJC6K6YS'),(8,'mail8@gmail.com','88888888H','Hugo','Hcognom Hcognom','0000-00-00','Carrer H 8','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',3,1,6,'G82AA7AM8KXFZNDGSGUULZ9KW77GNQ7V'),(9,'mail9@gmail.com','99999999I','Isaac','Icognom Icognom','0000-00-00','Carrer I 9','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',3,1,6,'VUWTMU6LJ6MHM36W3Z9N5EFSTS8LLLH8'),(10,'mail10@gmail.com','10000000J','Joan','Jcognom Jcognom','0000-00-00','Carrer J 10','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',3,1,6,'F2QWAD5KNWYKUCLQZCTCRZ2QTC5GRBAX'),(11,'mail11@gmail.com','11000000J','Kilian','Kcognom Kcognom','0000-00-00','Carrer K 11','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',4,1,9,'96WJMFLMBKCZ9LRH3V26VF4AHY3S5ZA4');
+INSERT INTO `persona` VALUES (1,'mail1@gmail.com','11111111A','Manuel','Acognom Acognom','0000-00-00','Carrer A 1','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',1,1,1,'GJQUMM3KA24UX5SA6Y4NMNXVXRR4G8CN'),(2,'mail2@gmail.com','22222222B','Marcos','Bcognom Bcognom','0000-00-00','Carrer B 2','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',1,1,1,'TNBFC2A4SAFB6ZUB9MLVCFY59VVD44GM'),(3,'mail3@gmail.com','33333333C','Biel','Ccognom Ccognom','0000-00-00','Carrer C 3','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',1,1,1,'97RKQLL3GDE3WTFLC2FZ9NA4N9SMA4B9'),(4,'mail4@gmail.com','44444444D','Tomàs','Dcognom Dcognom','0000-00-00','Carrer D 4','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',1,1,1,'QJ3XC5AQDPVSZ3FJVLY6334MRSP65G5K'),(5,'mail5@gmail.com','55555555E','Emili','Ecognom Ecognom','0000-00-00','Carrer E 5','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',2,1,3,'NWJJJ83GQ8ELJXWHJLYSK6CSCRCCVG39'),(6,'mail6@gmail.com','66666666F','Francesc','Fcognom Fcognom','0000-00-00','Carrer F 6','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',2,1,3,'RDYUV2WVR8JCFM4P8MQFF2TZ4SHUWCDD'),(7,'mail7@gmail.com','77777777G','Guillem','Gcognom Gcognom','0000-00-00','Carrer G 7','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',2,1,3,'HN8NDQS7RGGJYDQRDQLFZASYHJC6K6YS'),(8,'mail8@gmail.com','88888888H','Hugo','Hcognom Hcognom','0000-00-00','Carrer H 8','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',3,1,6,'G82AA7AM8KXFZNDGSGUULZ9KW77GNQ7V'),(9,'mail9@gmail.com','99999999I','Isaac','Icognom Icognom','0000-00-00','Carrer I 9','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',3,1,6,'VUWTMU6LJ6MHM36W3Z9N5EFSTS8LLLH8'),(10,'joanesp@gmail.com','10000000J','Joan','Jcognom Jcognom','0000-00-00','Carrer J 10','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',3,1,6,'F2QWAD5KNWYKUCLQZCTCRZ2QTC5GRBAX'),(11,'administrador@gmail.com','11000000J','Kilian','Kcognom Kcognom','0000-00-00','Carrer K 11','Barna','08111','b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',4,1,9,'96WJMFLMBKCZ9LRH3V26VF4AHY3S5ZA4'),(12,'aaaa@aaaa.es','77122488s','Biel','Conde','1987-02-22','asdasdas','BCN',NULL,'b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79',4,12,NULL,NULL);
 /*!40000 ALTER TABLE `persona` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -396,4 +396,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-21 20:11:35
+-- Dump completed on 2015-05-17 21:13:31

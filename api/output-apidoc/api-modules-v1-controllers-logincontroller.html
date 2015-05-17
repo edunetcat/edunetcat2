@@ -52,7 +52,8 @@ yii\rest\ActiveController</td></tr>
                                 </table>
 
 <div id="classDescription">
-    <strong></strong>
+    <strong>Classe controladora de login
+Clase login, per poder loguejar els usuaris a la web</strong>
     <p></p>
 </div>
 
@@ -75,8 +76,8 @@ yii\rest\ActiveController</td></tr>
 </tr>
         <tr id="$modelClass">
         <td><a href="api-modules-v1-controllers-logincontroller.html#$modelClass-detail">$modelClass</a></td>
-        <td></td>
-        <td></td>
+        <td>String</td>
+        <td>Nom de la clase model relacionada</td>
         <td><a href="api-modules-v1-controllers-logincontroller.html">api\modules\v1\controllers\LoginController</a></td>
     </tr>
     </table>
@@ -123,9 +124,10 @@ yii\rest\ActiveController</td></tr>
                     </span>
     </div>
 
-    <div class="signature"> <a href="api-modules-v1-controllers-logincontroller.html#$modelClass-detail">$modelClass</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'app\models\Persona'</span></div>
+    <div class="signature">String <a href="api-modules-v1-controllers-logincontroller.html#$modelClass-detail">$modelClass</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'app\models\Persona'</span></div>
 
-    
+    <p>Nom de la clase model relacionada</p>
+
     
 </div>
 <h2>Method Details</h2>
@@ -149,18 +151,26 @@ yii\rest\ActiveController</td></tr>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">void <strong><a href="api-modules-v1-controllers-logincontroller.html#actionLogin()-detail">actionLogin</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$password&nbsp;</span><span style="color: #007700">)</span></td></tr>
+        <tr><td colspan="3" class="signature"><a href="http://www.php.net/language.types.string">string</a> <strong><a href="api-modules-v1-controllers-logincontroller.html#actionLogin()-detail">actionLogin</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$password&nbsp;</span><span style="color: #007700">)</span></td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$user</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col">\api\modules\v1\controllers\unknown</td>
+                  <td class="param-desc-col"><p>Usuari per loguejar-se</p>
+</td>
                 </tr>
                             <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$password</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col">\api\modules\v1\controllers\unknown</td>
+                  <td class="param-desc-col"><p>Contrasenya</p>
+</td>
                 </tr>
-                                                </table>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>La api key</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 </div>
@@ -202,7 +212,7 @@ yii\rest\ActiveController</td></tr>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Fri, 15 May 2015 19:45:54 +0200</small></p>
+        <p class="pull-right"><small>Page generated on Sun, 17 May 2015 21:10:36 +0200</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {
