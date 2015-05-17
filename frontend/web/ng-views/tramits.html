@@ -1,0 +1,105 @@
+
+<style>
+	/* estils específics per aquesta plana */
+	.cal-row-head  { text-transform: capitalize; }
+</style>
+
+<div ng-controller="CentresListCtrl">
+
+	<div class="row">
+	    <div class="col-lg-12">
+	        <h1 class="page-header">Tramits</h1>
+	    </div>
+	    <!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+	<div class="row">
+	    <div class="col-lg-12">
+	    	<div class="panel panel-default">
+	            <div class="panel-heading">
+	                <i class="fa fa-bar-chart-o fa-fw"></i> Missatges nous:
+	            </div>
+		        <table class="table table-striped">
+			      <thead>
+			        <tr>
+			          <th>Tràmit</th>
+			          <th>Periode</th>
+			          <th></th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <tr>
+			          <td>Sol·licitud de convalidació directa</td>
+			          <td>  del 19 al 27 de març (Tancat)</td>
+			          <td><button class="btn btn-default" type="submit">Tramitar</button></td>
+			        </tr>
+			        <tr>
+			          <td>Matèries superades del mateix cicle formatiu</td>
+			          <td>del 19 al 27 de març (Tancat)</td>
+			          <td><button class="btn btn-default" type="submit">Tramitar</button></td>
+			        </tr>
+			        <tr>
+			          <td>Sol·licitud de convalidació singular</td>
+			          <td>del 19 al 27 de març (Tancat)</td>
+			          <td><button class="btn btn-default" type="submit">Tramitar</button></td>
+			        </tr>
+			        <tr>
+			          <td>Sol·licitud d'exempció de l'FCT </td>
+			          <td>del 19 al 27 de març (Tancat) </td>
+			          <td><button class="btn btn-default" type="submit">Tramitar</button></td>
+			        </tr>
+			        <tr>
+			          <td>Al·legacions a la resolució d'un tràmit </td>
+			          <td>del 15 al 22 maig de 2015 (Obert) </td>
+			          <td><button class="btn btn-default" type="submit">Tramitar</button></td>
+			        </tr>
+			        <tr>
+			          <td>Anul·lació de matrícula de crèdits/mòduls </td>
+			          <td>de l'11 al 18 de maig de 2015 (Obert) </td>
+			          <td><button class="btn btn-default" type="submit">Tramitar</button></td>
+			        </tr>
+			        <tr>
+			          <td>Generar carnet d'estudiant </td>
+			          <td>Disponible </td>
+			          <td><button class="btn btn-default" type="submit">Tramitar</button></td>
+			        </tr>
+			        <tr>
+			          <td>Sol·licitud de matrícula a un altre cicle formatiu </td>
+			          <td>del 12 al 25 de juny de 2015 (Tancat) </td>
+			          <td><button class="btn btn-default" type="submit">Tramitar</button></td>
+			        </tr>
+			        <tr>
+			          <td>Sol·licitud de readmissió a un cicle formatiu </td>
+			          <td>del 19 al 23 març de 2015 (Tancat) </td>
+			          <td><button class="btn btn-default" type="submit">Tramitar</button></td>
+			        </tr>
+			        <tr>
+			          <td>Certificat matricula (autoservei) </td>
+			          <td>Disponible </td>
+			          <td><button class="btn btn-default" type="submit">Tramitar</button></td>
+			        </tr>
+
+			      </tbody>
+			    </table>
+			</div>
+	    </div>
+	    <!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+</div>	
+
+
+<script type="text/ng-template" id="modalContent.html">
+	<div class="modal-header">
+		<h3 class="modal-title">Event action occurred!</h3>
+	</div>
+	<div class="modal-body">
+		<p>Action: <pre>{{ action }}</pre></p>
+		<p>Event: <pre>{{ event | json }}</pre></p>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" ng-click="$modalInstance.close()">OK</button>
+	</div>
+</script>

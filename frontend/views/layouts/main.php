@@ -28,7 +28,7 @@ AppAsset::register($this);
     
     <!-- Custom Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//mattlewis92.github.io/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet" type="text/css">
+    <link href="css/angular-bootstrap-calendar.css" rel="stylesheet" type="text/css">
 
 </head>
 <body ng-app="panellApp">
@@ -100,12 +100,10 @@ AppAsset::register($this);
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                        <i class="fa fa-user fa-fw"></i> Tomàs <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i> Biel Conde <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href=""><i class="fa fa-user fa-fw"></i> Perfil</a>
-                        </li>
-                        <li><a href=""><i class="fa fa-gear fa-fw"></i> Compte</a>
+                        <li><a href="/#/perfil"><i class="fa fa-user fa-fw"></i> Perfil</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="#/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -141,7 +139,7 @@ AppAsset::register($this);
                             <a href="/#/usuaris"><i class="fa fa-building fa-fw"></i> Administrar Usuaris</a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-sign-in fa-fw"></i> Tràmits</a>
+                            <a href="/#/tramits"><i class="fa fa-sign-in fa-fw"></i> Tràmits</a>
                         </li>
                         <li>
                             <a href="/#/missatges"><i class="fa fa-envelope-o fa-fw"></i> Missatges</a>
@@ -150,19 +148,19 @@ AppAsset::register($this);
                             <a href="/#/calendari"><i class="fa fa-calendar-o fa-fw"></i> Calendari</a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-bar-chart-o fa-fw"></i> Expedient acadèmic</a>
+                            <a href="/#/panell"><i class="fa fa-bar-chart-o fa-fw"></i> Expedient acadèmic</a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-edit fa-fw"></i> Avaluació <span class="fa arrow"></span></a>
+                            <a href="/#/panell"><i class="fa fa-edit fa-fw"></i> Avaluació <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="">M01 - Assignatura de proba</a>
+                                    <a href="/#/panell">M02 - Base de Dades</a>
                                 </li>
                                 <li>
-                                    <a href="">M02 - Base de Dades</a>
+                                    <a href="/#/panell">M03 - Sistemes</a>
                                 </li>
                                 <li>
-                                    <a href="">M03 - Sistemes</a>
+                                    <a href="/#/panell">M06 - Accés a dades</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

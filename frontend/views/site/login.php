@@ -10,6 +10,9 @@ $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
        
+    <div style="text-align:center; margin-top: 25%;">
+        <img src="img/logo.png" alt="Edunet.cat" style="max-width: 200px;">
+    </div>   
     <div class="login-panel panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Benvingut a Edunet.cat</h3>

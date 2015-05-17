@@ -259,6 +259,26 @@ panellAppControllers.controller('CalendariCtrl', ['$scope', '$http', '$modal',
 	    };
 	}]);
 
+/**
+*   Controller que gestiona la plana /missatges
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('TramitsCtrl', ['$scope', '$http', 
+	function($scope, $http) {
+		
+	}]);
+
+/**
+*   Controller que gestiona la plana /missatges
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('PerfilCtrl', ['$scope', '$http', 
+	function($scope, $http) {
+		
+	}]);
+
 
 /**
 *   Controller que gestiona la plana /missatges

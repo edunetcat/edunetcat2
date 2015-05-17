@@ -73,6 +73,14 @@ panellApp.config(['$routeProvider', '$httpProvider',
             templateUrl: 'ng-views/calendari.html',
             controller: 'CalendariCtrl'
         })
+        .when('/tramits', {
+            templateUrl: 'ng-views/tramits.html',
+            controller: 'TramitsCtrl'
+        })
+        .when('/perfil', {
+            templateUrl: 'ng-views/perfil.html',
+            controller: 'PerfilCtrl'
+        })
 
         .when('/logout', {
             templateUrl: 'ng-views/panell.html',
