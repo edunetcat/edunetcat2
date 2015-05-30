@@ -1,3 +1,4 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <div ng-controller="CentresListCtrl">
 
 	<div class="row">
@@ -51,8 +52,7 @@
 								<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></button>
 							</div>
 							<div class="pull-right">
-								<button type="button" class="btn btn-default">Guardar</button>
-								<button type="button" class="btn btn-success">Enviar</button>
+								<button type="button" class="btn btn-success" onclick="enviarMissatge()">Enviar</button>
 								<button type="button" class="btn btn-danger">Cancelar</button>
 								
 							</div>
@@ -89,12 +89,9 @@
 				            <a href="" class="btn btn-danger btn-sm btn-block" role="button">REDACTAR</a>
 				            <hr />
 				            <ul class="nav nav-pills nav-stacked">
-				                <li class="active"><a href=""><span class="badge pull-right">3</span> Safata entrada </a>
-				                </li>
-				                <li><a href="">Llegits</a></li>
-				                <li><a href="">Importants</a></li>
-				                <li><a href="">Enviats</a></li>
-				                <li><a href=""><span class="badge pull-right">3</span>Esborranys</a></li>
+				                <li><a href="/#/missatges">Safata entrada </a> </li>
+				                <li ><a href="/#/missatges-llegits">Llegits</a></li>
+				                <li ><a href="/#/missatges-enviats">Enviats</a></li>
 				            </ul>
 				        </div>
                 	</div>              
@@ -111,3 +108,38 @@
 	<!-- /.row -->
 
 </div>	
+
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Missatge enviat correctament</h4>
+            </div>
+            <div class="modal-body">
+                <p>El missatge s'ha enviat correctament al destinatari</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="tancarModal()">Acceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	function enviarMissatge() {
+		setTimeout(function(){  
+			$("#myModal").modal('show');
+		}, 300);
+	}
+
+	function tancarModal() {
+		$("#myModal").modal('hide');
+
+		setTimeout(function(){  		
+			window.location.replace("/#/missatges");
+		}, 500);
+	}
+
+</script>

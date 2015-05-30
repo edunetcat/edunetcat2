@@ -65,9 +65,9 @@
 						<div class="col-lg-12">
 							<!-- Nav tabs -->
 				            <ul class="nav nav-tabs">
-				                <li class="active"><a href="" data-toggle="tab"><span class="glyphicon glyphicon-inbox">
+				                <li><a href="/#/missatges" data-toggle="tab"><span class="glyphicon glyphicon-inbox">
 				                </span> No llegits</a></li>
-				                <li><a href="/#/missatges-professorat" data-toggle="tab"><span class="glyphicon glyphicon-envelope"></span>
+				                <li  class="active"><a href="" data-toggle="tab"><span class="glyphicon glyphicon-envelope"></span>
 				                    Missatges del professorat</a></li>
 				                <li><a href="/#/missatges-alumnat" data-toggle="tab"><span class="glyphicon glyphicon-user"></span>
 				                    Missatges alumnat</a></li>
@@ -78,16 +78,25 @@
 				            <div class="tab-content">
 				                <div class="tab-pane fade in active" id="home">
 				                    <div class="list-group">
-				                        <div href="#/missatges" class="list-group-item">											
+										<a href="#/missatges" class="list-group-item">											
 											<div class="row">
-												<div class="col-lg-12">
-					                                <span>No hi han missatges nous</span>											
-												</div>										
+												<div class="col-lg-1">
+					                                <label>
+							                            <input type="checkbox" name="">
+							                        </label>											
+												</div>
+												<div class="col-lg-4">
+						                            <span class="glyphicon glyphicon-star-empty"></span><span class="name" style="min-width: 120px;
+						                                display: inline-block;"> Profesor sistemes</span>
+												</div>
+												<div class="col-lg-5">
+													<span> Pautes EAC2 sistemes?</span>	
+												</div>
+												<div class="col-lg-1">
+														<span class="badge">09:10</span>	
+												</div>												
 											</div>
-										</div>
-
-
-				                            
+										</a>
 				                    </div>
 				                </div>
 				                <div class="tab-pane fade in" id="profile">

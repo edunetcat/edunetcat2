@@ -65,6 +65,24 @@ panellApp.config(['$routeProvider', '$httpProvider',
             templateUrl: 'ng-views/missatges.html',
             controller: 'MissatgesListCtrl'
         })
+        .when('/missatges-professorat', {
+            templateUrl: 'ng-views/missatges-professorat.html',
+            controller: 'MissatgesListCtrl'
+        })
+        .when('/missatges-alumnat', {
+            templateUrl: 'ng-views/missatges-alumnat.html',
+            controller: 'MissatgesListCtrl'
+        })
+        .when('/missatges-llegits', {
+            templateUrl: 'ng-views/missatges-llegits.html',
+            controller: 'MissatgesListCtrl'
+        })
+        .when('/missatges-enviats', {
+            templateUrl: 'ng-views/missatges-enviats.html',
+            controller: 'MissatgesListCtrl'
+        })
+        
+
         .when('/missatges-new', {
             templateUrl: 'ng-views/missatges-new.html',
             controller: 'MissatgesListCtrl'
