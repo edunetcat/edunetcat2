@@ -105,6 +105,10 @@ panellApp.config(['$routeProvider', '$httpProvider',
             templateUrl: 'ng-views/tramit-alegacions-88.html',
             controller: 'TramitsCtrl'
         })
+         .when('/tramit-anulacions', {
+            templateUrl: 'ng-views/tramit-anulacions.html',
+            controller: 'TramitsCtrl'
+        })
         .when('/perfil', {
             templateUrl: 'ng-views/perfil.html',
             controller: 'PerfilCtrl'

@@ -1,0 +1,101 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<style>
+	/* estils específics per aquesta plana */
+	.cal-row-head  { text-transform: capitalize; }
+</style>
+
+<div ng-controller="CentresListCtrl">
+
+	<div class="row">
+	    <div class="col-lg-12">
+	        <h1 class="page-header">Anul·lacions de crèdits/mòduls</h1>
+	    </div>
+	    <!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+	<div class="row"> 
+	    <div class="col-lg-12">
+	    	<div class="panel panel-default">
+	            <div class="panel-heading">
+	                <i class="fa fa-bar-chart-o fa-fw"></i> Anul·la els crèdits/mòduls que desitgis:
+	            </div>
+		        <table class="table table-striped">
+			      <thead>
+			        <tr>
+			          <th>Crèdits/mòduls</th>
+			          
+			          
+			          <th width="1%"></th>
+			        </tr>
+			      </thead>
+			      <tbody> 
+			        <tr>
+			          <td>M02 - Base de Dades</td>
+			          <td><a class="btn btn-danger "   onclick="anular()">Anul·lar</a></td>
+			        </tr>
+			        <tr>
+			          <td>M03 - Sistemes</td>
+			          <td><a class="btn btn-danger "   onclick="anular()">Anul·lar</a></td>
+			        </tr>
+			        <tr>
+			          <td>M06 - Accés a dades</td>
+			          <td><a class="btn btn-danger "   onclick="anular()">Anul·lar</a></td>
+			        </tr>
+
+
+
+
+			          
+	
+
+			      </tbody>
+			    </table>
+			</div>
+	    </div>
+	    <!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+
+
+</div>	
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirmació d'anul·lació</h4>
+            </div>
+            <div class="modal-body">
+                <p>Estàs segur de voler anul·lar la matrícula a aquest crèdit/mòdul?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="aceptarModal()">Acceptar</button>
+                <button type="button" class="btn btn-primary" onclick="tancarModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	function anular() {
+		setTimeout(function(){  
+			$("#myModal").modal('show');
+		}, 500);
+	}
+
+	function tancarModal() {
+		$("#myModal").modal('hide');
+
+	}
+	
+	function aceptarModal() {
+		$("#myModal").modal('hide');
+
+		setTimeout(function(){  		
+			window.location.replace("/#/tramits");
+		}, 700);
+	}
+
+</script>
