@@ -81,10 +81,12 @@ panellApp.config(['$routeProvider', '$httpProvider',
             templateUrl: 'ng-views/missatges-enviats.html',
             controller: 'MissatgesListCtrl'
         })
-        
-
         .when('/missatges-new', {
             templateUrl: 'ng-views/missatges-new.html',
+            controller: 'MissatgesListCtrl'
+        })
+        .when('/missatges-read', {
+            templateUrl: 'ng-views/missatges-read.html',
             controller: 'MissatgesListCtrl'
         })
         .when('/calendari', {

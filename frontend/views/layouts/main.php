@@ -59,35 +59,24 @@ AppAsset::register($this);
                 </li> -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        <!-- <span class="badge important" style="background-color: #d9534f;">1</span>-->
                         <i class="fa fa-envelope fa-fw"></i> Missatges <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            <a href="">
+                            <a href="/#/missatges-read">
                                 <div>
-                                    <strong>Manuel Lopera</strong>
+                                    <strong>Professor sistemes</strong>
                                     <span class="pull-right text-muted">
-                                        <em>23/03/2013</em>
+                                        <em>09:10</em>
                                     </span>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                <div>RE: Dubtes amb ex3 EAC4?</div>
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="">
-                                <div>
-                                    <strong>Marcos Torrent</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>01/03/2013</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="">
+                            <a class="text-center" href="/#/missatges">
                                 <strong>Llegir la resta de missatges</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -132,12 +121,8 @@ AppAsset::register($this);
                         <li>
                             <a href="/#/"><i class="fa fa-dashboard fa-fw"></i> Panell Alumnes</a>
                         </li>
-                        <li>
-                            <a href="/#/centres"><i class="fa fa-building fa-fw"></i> Administrar Centres</a>
-                        </li>
-                        <li>
-                            <a href="/#/usuaris"><i class="fa fa-building fa-fw"></i> Administrar Usuaris</a>
-                        </li>
+                        <!-- <li><a href="/#/centres"><i class="fa fa-building fa-fw"></i> Administrar Centres</a></li>-->
+                        <!-- <li><a href="/#/usuaris"><i class="fa fa-building fa-fw"></i> Administrar Usuaris</a></li> -->
                         <li>
                             <a href="/#/tramits"><i class="fa fa-sign-in fa-fw"></i> Tràmits</a>
                         </li>
