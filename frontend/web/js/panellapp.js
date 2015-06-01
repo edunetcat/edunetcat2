@@ -13,7 +13,7 @@ var panellApp = angular.module('panellApp', [
 // controllers
 'panellAppControllers',
 // services
-'panellAppServices' ]);
+'panellAppServices', 'underscore' ]);
 
 /**
  * Aquí estan definides les rutes de la SPA. Per cada regla, es defineix el
@@ -96,6 +96,11 @@ panellApp.config([ '$routeProvider', '$httpProvider',
 				templateUrl : 'ng-views/expedient.html',
 				controller : 'PanellCtrl'
 			})
+
+            .when('/avaluacio-gestor', {
+                templateUrl : 'ng-views/avaluacio-gestor.html',
+                controller : 'AvaluacioGestorCtrl'
+            })
 
 			.when('/avaluacio-dam-m02', {
 				templateUrl : 'ng-views/avaluacio-dam-m02.html',

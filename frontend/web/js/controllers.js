@@ -300,3 +300,25 @@ panellAppControllers.controller('MissatgesListCtrl', ['$scope', '$http',
 	function($scope, $http) {
 		
 	}]);
+
+
+
+/**
+*   Controller que gestiona la plana /avaluacio-gestor 
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('AvaluacioGestorCtrl', ['$scope', '$http', 'UsuarisFactory', '_',
+	function($scope, $http, UsuarisFactory, _) {
+		// peticio al factory de centres
+		$scope.usuaris = UsuarisFactory.query(
+			function (data, status) {				
+				for(i=0; i<data.length; i++) {
+					if(data[i].idTipusUsuari !== 1) {
+						data.splice(i, 1);
+					}
+				}
+			});		
+
+		$scope.orderProp = 'nom';
+	}]);

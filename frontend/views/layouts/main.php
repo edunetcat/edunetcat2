@@ -105,7 +105,7 @@ AppAsset::register ( $this );
 						<li><a href="/#/missatges"><i class="fa fa-envelope-o fa-fw"></i> Missatges</a></li>
 						<li><a href="/#/calendari"><i class="fa fa-calendar-o fa-fw"></i> Calendari</a></li>
 						<li><a href="/#/expedient"><i class="fa fa-bar-chart-o fa-fw"></i> Expedient acadèmic</a></li>
-						<li><a href="/#/panell"><i class="fa fa-edit fa-fw"></i> Avaluació <span class="fa arrow"></span></a>
+						<li><a href="/#/avaluacio-gestor"><i class="fa fa-edit fa-fw"></i> Avaluació <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="/#/avaluacio-dam-m02">M02 - Base de Dades</a></li>
 								<li><a href="/#/avaluacio-dam-m03">M03 - Sistemes</a></li>
@@ -132,12 +132,17 @@ AppAsset::register ( $this );
 
 	<!-- Metis Menu Plugin JavaScript -->
 	<script src="/js/vendor/metisMenu.min.js"></script>
+    
 
-	<!-- angular 1.4.0-rc.0 -->
-	<script src="/js/vendor/angular.min.js"></script>
-	<script src="/js/vendor/angular-route.min.js"></script>
-	<script src="/js/vendor/angular-resource.min.js"></script>
+    <!-- angular 1.4.0-rc.0 -->
+    <script src="/js/vendor/angular.min.js"></script>
+    <script src="/js/vendor/angular-route.min.js"></script>
+    <script src="/js/vendor/angular-resource.min.js"></script>
 
+    <!-- Underscore -->
+    <script src="/js/vendor/underscore-min.js"></script>
+    <script src="/js/vendor/angular-underscore-module.js"></script>
+    
 	<script src="/js/vendor/ui-bootstrap-0.13.0.min.js"></script>
 	<script src="/js/vendor/moment.min.js"></script>
 	<script src="/js/vendor/moment-ca.js"></script>
