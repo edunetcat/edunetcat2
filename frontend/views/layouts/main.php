@@ -99,15 +99,16 @@ AppAsset::register ( $this );
 							</div> <!-- /input-group -->
 						</li>
 						<li><a href="/#/"><i class="fa fa-dashboard fa-fw"></i> Panell Alumnes</a></li>
-						<!-- <li><a href="/#/centres"><i class="fa fa-building fa-fw"></i> Administrar Centres</a></li>-->
-						<!-- <li><a href="/#/usuaris"><i class="fa fa-building fa-fw"></i> Administrar Usuaris</a></li> -->
+						<li><a href="/#/centres"><i class="fa fa-building fa-fw"></i> Administrar Centres</a></li>
+						<li><a href="/#/usuaris"><i class="fa fa-building fa-fw"></i> Administrar Usuaris</a></li>
 						<li><a href="/#/tramits"><i class="fa fa-sign-in fa-fw"></i> Tràmits</a></li>
 						<li><a href="/#/missatges"><i class="fa fa-envelope-o fa-fw"></i> Missatges</a></li>
 						<li><a href="/#/calendari"><i class="fa fa-calendar-o fa-fw"></i> Calendari</a></li>
 						<li><a href="/#/expedient"><i class="fa fa-bar-chart-o fa-fw"></i> Expedient acadèmic</a></li>
-						<li><a href="/#/avaluacio-gestor"><i class="fa fa-edit fa-fw"></i> Avaluació <span class="fa arrow"></span></a>
+						<li><a href=""><i class="fa fa-edit fa-fw"></i> Avaluació <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="/#/avaluacio-dam-m02">M02 - Base de Dades</a></li>
+								<!-- <li><a href="/#/avaluacio-gestor">M02 - Base de Dades</a></li> -->
+                                <li><a href="/#/avaluacio-dam-m02">M02 - Base de Dades</a></li>
 								<li><a href="/#/avaluacio-dam-m03">M03 - Sistemes</a></li>
 								<li><a href="/#/avaluacio-dam-m06">M06 - Accés a dades</a></li>
 							</ul> <!-- /.nav-second-level --></li>
@@ -142,7 +143,7 @@ AppAsset::register ( $this );
     <!-- Underscore -->
     <script src="/js/vendor/underscore-min.js"></script>
     <script src="/js/vendor/angular-underscore-module.js"></script>
-    
+
 	<script src="/js/vendor/ui-bootstrap-0.13.0.min.js"></script>
 	<script src="/js/vendor/moment.min.js"></script>
 	<script src="/js/vendor/moment-ca.js"></script>

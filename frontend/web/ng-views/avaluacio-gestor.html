@@ -2,18 +2,18 @@
 
 	<div class="row">
 	    <div class="col-lg-12">
-	        <h1 class="page-header">Administració d'usuaris</h1>
+	        <h1 class="page-header">Avaluació M02 - Base de Dades (DAM)</h1>
 	    </div>
 	    <!-- /.col-lg-12 -->
 	</div>
 	<!-- /.row -->
 
 	<div class="row">
-	    <div class="col-lg-8">
+	    <div class="col-lg-12">
 	        <!-- /.panel -->
 	        <div class="panel panel-default">
 	            <div class="panel-heading">
-	                <i class="fa fa-bar-chart-o fa-fw"></i> Llistat d'usuaris
+	                <i class="fa fa-bar-chart-o fa-fw"></i> Llistat d'alumnes matriculats
 	            </div>
 	            <!-- /.panel-heading -->
 	            <div class="panel-body">
@@ -26,7 +26,7 @@
 		                        <select name="ordreCentres" ng-model="orderProp">
 						          <option value="nom">Nom</option>
 						          <option value="cognom">Cognom</option>
-						          <option value="direccio">Adreça</option>
+						          <option value="email">Email</option>
 						          <option value="dataNaixement">Data Naixement</option>
 						        </select>
 					        </label>
@@ -38,7 +38,6 @@
 					                    <th ng-click="orderProp = 'cognoms'">Cognoms</th>
 					                    <th ng-click="orderProp = 'email'">Email</th>
 					                    <th ng-click="orderProp = 'dataNaixement'">Data Naixement</th>
-					                    <th ng-click="orderProp = 'poblacio'">Població</th>
 					                    <th></th>
 					                </tr>
 					            </thead>
@@ -47,9 +46,8 @@
 					                <td>{{usuari.cognoms}}</td>
 					                <td>{{usuari.email}}</td>
 					                <td>{{usuari.dataNaixement}}</td>
-					                <td>{{usuari.poblacio}}</td>
 					                <td>
-					                	<a href="#/usuaris-edit/{{usuari.id}}" class="btn btn-default btn-xs"><i class="fa fa-pencil fa-fw"></i> Editar</a>
+					                	<a href="#/avaluacio-edit/{{usuari.id}}" class="btn btn-default btn-xs"><i class="fa fa-pencil fa-fw"></i> Avaluar</a>
 					                </td>
 									
 					            </tr>
@@ -71,23 +69,6 @@
 	    </div>
 	    <!-- /.col-lg-8 -->
 
-	    <div class="col-lg-4">
-	        <div class="panel panel-default">
-	            <div class="panel-heading">
-	                <i class="fa fa-bell fa-fw"></i> Altres opcions
-	            </div>
-	            <!-- /.panel-heading -->
-	            <div class="panel-body">
-	                
-	                <a href="#/usuaris-add" class="btn btn-default btn-block">Crear nou usuari</a>
-
-	                
-	                <!-- /.list-group -->
-	            </div>
-	            <!-- /.panel-body -->
-	        </div>
-	        <!-- /.panel -->
-	    </div>
 	    <!-- /.col-lg-4 -->
 	</div>
 	<!-- /.row -->

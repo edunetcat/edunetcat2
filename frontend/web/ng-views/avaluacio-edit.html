@@ -1,0 +1,167 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<div ng-controller="AvaluacioEditCtrl">
+
+	<div class="row">
+	    <div class="col-lg-12">
+	        <h1 class="page-header">Avaluació M02 - Base de Dades (DAM)</h1>
+	    </div>
+	    <!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+	<div class="row">
+	    <div class="col-lg-12">
+	        <!-- /.panel -->
+	        <div class="panel panel-default">
+	            <div class="panel-heading">
+	                
+	            </div>
+	            <!-- /.panel-heading -->
+	            <div class="panel-body">
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+							    <h3>
+							    	<label>Alumne:</label> {{user.nom}} {{user.cognoms}}
+									<div class="pull-right">
+									    <a class="btn btn-success" onclick="guardarAvaluacio()">Actualitzar</a>
+						        	</div>
+							    </h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i> UF1 - Base de Dades
+						</div>
+
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>EAC</th>
+									<th>Data Entrega</th>
+									<th>Nota</th>
+									<th>Comentaris</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>EAC1</td>
+									<td><input ng-model="avaluacio.data1" class="form-control ng-pristine ng-valid ng-touched" id="dataNaixement" placeholder="dd/mm/aaaa" type="date"></td>
+									<td><input ng-model="avaluacio.nota1" class="form-control ng-pristine ng-valid ng-touched" id="dataNaixement"></td>
+									<td>
+										<textarea rows="3" cols="50" class="form-control ng-pristine ng-valid ng-touched" ng-model="avaluacio.comentari1" />
+									</td>
+								</tr>
+								<tr>
+									<td>EAC2</td>
+									<td><input ng-model="avaluacio.data2" class="form-control ng-pristine ng-valid ng-touched" id="dataNaixement" placeholder="dd/mm/aaaa" type="date"></td>
+									<td><input id="date2" ng-model="avaluacio.nota2" class="form-control ng-pristine ng-valid ng-touched" id="dataNaixement"></td>
+									<td><textarea rows="3" cols="50" class="form-control ng-pristine ng-valid ng-touched" ng-model="avaluacio.comentari2" /></td>
+								</tr>
+								<tr>
+									<td>EAC3</td>
+									<td><input ng-model="avaluacio.data3" class="form-control ng-pristine ng-valid ng-touched" id="dataNaixement" placeholder="dd/mm/aaaa" type="date"></td>
+									<td><input ng-model="avaluacio.nota3" class="form-control ng-pristine ng-valid ng-touched" id="dataNaixement"></td>
+									<td><textarea rows="3" cols="50" class="form-control ng-pristine ng-valid ng-touched" ng-model="avaluacio.comentari3" /></td>
+								</tr>
+								<tr>
+									<td>EAC4</td>
+									<td><input ng-model="avaluacio.data4" class="form-control ng-pristine ng-valid ng-touched" id="dataNaixement" placeholder="dd/mm/aaaa" type="date"></td>
+									<td><input ng-model="avaluacio.nota4" class="form-control ng-pristine ng-valid ng-touched" id="dataNaixement"></td>
+									<td><textarea rows="3" cols="50" class="form-control ng-pristine ng-valid ng-touched" ng-model="avaluacio.comentari4" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i> PAF
+						</div>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th width="20%">PAF</th>
+									<th width="30%">Data</th>
+									<th width="10%">Nota</th>
+									<th width="20%"></th>
+								
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>PAF1</td>
+									<td>28/04/2015</td>
+									<td><input ng-model="avaluacio.notapaf1" class="form-control ng-pristine ng-valid ng-touched" id="dataNaixement"></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>PAF2</td>
+									<td>10/05/2015</td>
+									<td><input ng-model="avaluacio.notapaf2" class="form-control ng-pristine ng-valid ng-touched" id="dataNaixement"></td>
+									<td></td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+
+	                <div class="row">
+	                    <div class="col-lg-12">
+				        	<div class="pull-right">
+							    <a class="btn btn-success" onclick="guardarAvaluacio()">Actualitzar</a>
+				        	</div>
+						</div>
+	                </div>
+	                <!-- /.row -->
+	            </div>
+	            <!-- /.panel-body -->
+	        </div>
+	        <!-- /.panel -->                    
+	    </div>
+	    <!-- /.col-lg-12 -->
+
+	   
+	</div>
+	<!-- /.row -->
+
+</div>	
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Avaluat satisfactoriament</h4>
+            </div>
+            <div class="modal-body">
+                <p>S'ha evaluat correctament a l'alumne <strong>{{user.nom}} {{user.cognoms}} </strong></p>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-primary" onclick="tancarModal()">Acceptar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	function guardarAvaluacio() {
+		setTimeout(function(){  
+			$("#myModal").modal('show');
+		}, 500);
+	}
+
+	function tancarModal() {
+		$("#myModal").modal('hide');
+
+		setTimeout(function(){  		
+			window.location.replace("/#/avaluacio-gestor");
+		}, 700);
+	}
+
+	$("#date2").val(new Date().toISOString().substring(0, 10));
+
+</script>

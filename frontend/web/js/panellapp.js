@@ -46,7 +46,7 @@ panellApp.config([ '$routeProvider', '$httpProvider',
 			}).when('/usuaris-add', {
 				templateUrl : 'ng-views/usuaris-add.html',
 				controller : 'UsuarisAddCtrl'
-			}).when('/usuaris-edit', {
+			}).when('/usuaris-edit/:id', {
 				templateUrl : 'ng-views/usuaris-edit.html',
 				controller : 'UsuarisEditCtrl'
 			})
@@ -97,9 +97,14 @@ panellApp.config([ '$routeProvider', '$httpProvider',
 				controller : 'PanellCtrl'
 			})
 
+            //avaluacio
             .when('/avaluacio-gestor', {
                 templateUrl : 'ng-views/avaluacio-gestor.html',
                 controller : 'AvaluacioGestorCtrl'
+            })
+            .when('/avaluacio-edit/:id', {
+                templateUrl : 'ng-views/avaluacio-edit.html',
+                controller : 'AvaluacioEditCtrl'
             })
 
 			.when('/avaluacio-dam-m02', {

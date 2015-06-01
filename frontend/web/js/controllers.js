@@ -160,23 +160,12 @@ panellAppControllers.controller('UsuarisAddCtrl', ['$scope', '$location', 'Centr
 *   
 *   @author: Biel <bielbcm@gmail.com>
 **/
-panellAppControllers.controller('UsuarisEditCtrl', ['$scope', '$http', '$routeParams', '$location', 'UsuarisFactory',
-	function($scope, $http, $routeParams, $location, UsuarisFactory) {
+panellAppControllers.controller('UsuarisEditCtrl', ['$scope', '$http', '$routeParams', '$location', 'UsuarisFactory', 'UsuariFactory',
+	function($scope, $http, $routeParams, $location, UsuarisFactory, UsuariFactory) {
 
 		$scope.updateCentre = function() {
-			UsuarisFactory.update( $scope.centre );
+			UsuariFactory.update( $scope.centre );
 			$location.path('/usuaris');
-
-			/*var requestURL = _APIHOST +'/centres/'+ $routeParams.id;
-			$http.put(requestURL, $scope.centre)
-				.success(function (response, status, headers, config) {
-					alert('success');
-					$scope.centre = response;
-				})
-				.error(function () {
-					alert('error')
-				});
-			*/
 		}
 
         $scope.cancel = function () {
@@ -184,7 +173,7 @@ panellAppControllers.controller('UsuarisEditCtrl', ['$scope', '$http', '$routePa
         }
 		
 		// peticio al factory centre		
-		$scope.centre = UsuarisFactory.show({id: $routeParams.id});		
+		$scope.centre = UsuariFactory.show({id: $routeParams.id});		
 
 	}]);
 
@@ -321,4 +310,36 @@ panellAppControllers.controller('AvaluacioGestorCtrl', ['$scope', '$http', 'Usua
 			});		
 
 		$scope.orderProp = 'nom';
+	}]);
+
+
+/**
+*   Controller que edita alumnes
+*   
+*   @author: Biel <bielbcm@gmail.com>
+**/
+panellAppControllers.controller('AvaluacioEditCtrl', ['$scope', '$http', '$routeParams', '$location', 'UsuariFactory',
+	function($scope, $http, $routeParams, $location, UsuariFactory) {
+		
+		// peticio al factory centre		
+		$scope.user = UsuariFactory.show({id: $routeParams.id});
+
+		$scope.avaluacio = {
+			data1: new Date('03/02/2015'),
+			data2: new Date('04/10/2015'),
+			nota1: 7.75,
+			nota2: 8,
+			comentari1: 'Ben fet, exercici 2 falta indicar exemples.',
+			comentari2: 'Falta exercici 4.3.',
+			data3: new Date('05/03/2015'),
+			data4: new Date('05/20/2015'),
+			nota3: 9.5,
+			nota4: 8,
+			comentari3: 'Gairebé perfecte. Mira solució per afinar més les explicacions.',
+			comentari4: 'Error en els càlculs del exercici 3.2. Ha de donar molt més del que dius.',
+			//notapaf1: 8
+		}; 
+
+		console.log($scope.avaluacio);
+
 	}]);
